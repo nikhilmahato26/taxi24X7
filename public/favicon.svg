@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="22" fill="#003B95" />
+  <circle cx="50" cy="50" r="42" fill="#0A1F44" />
+  <!-- Taxi Roof Light Bar -->
+  <rect x="36" y="22" width="28" height="8" rx="3" fill="#FFD200" />
+  <rect x="44" y="18" width="12" height="4" rx="1.5" fill="#FFD200" />
+  <!-- Car Silhouette -->
+  <path d="M24 64 L28 48 C29 44 33 40 37 40 L63 40 C67 40 71 44 72 48 L76 64 C78 64 80 66 80 69 L80 73 C80 75 78 77 76 77 L73 77 C73 73 70 70 66 70 C62 70 59 73 59 77 L41 77 C41 73 38 70 34 70 C30 70 27 73 27 77 L24 77 C22 77 20 75 20 73 L20 69 C20 66 22 64 24 64 Z" fill="#FFD200" />
+  <!-- Windshield -->
+  <path d="M33 46 L67 46 L64 56 L36 56 Z" fill="#0A1F44" />
+  <!-- Wheels -->
+  <circle cx="34" cy="76" r="6" fill="#FFFFFF" />
+  <circle cx="34" cy="76" r="3" fill="#0A1F44" />
+  <circle cx="66" cy="76" r="6" fill="#FFFFFF" />
+  <circle cx="66" cy="76" r="3" fill="#0A1F44" />
+  <!-- Headlights -->
+  <circle cx="28" cy="62" r="2.5" fill="#FFFFFF" />
+  <circle cx="72" cy="62" r="2.5" fill="#FFFFFF" />
+</svg>
