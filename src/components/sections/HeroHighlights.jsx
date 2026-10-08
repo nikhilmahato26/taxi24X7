@@ -1,0 +1,55 @@
+import { motion } from 'framer-motion'
+import { MapPin, Car, Users, Compass } from 'lucide-react'
+import { heroHighlights } from '../../data/siteContent'
+
+const iconMap = {
+  'map-pin': MapPin,
+  car: Car,
+  users: Users,
+  compass: Compass,
+}
+
+export default function HeroHighlights({ onOpenEnquiry }) {
+  return (
+    <section className="relative -mt-8 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        {heroHighlights.map((card, idx) => {
+          const Icon = iconMap[card.icon] || MapPin
+          return (
+            <motion.div
+              key={card.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: idx * 0.08 }}
+              className="group relative bg-white rounded-2xl p-6 border border-slate-200/80 shadow-lg shadow-slate-900/5 hover:shadow-xl hover:border-amber-400/50 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+            >
+              <div className="flex items-start justify-between gap-4 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-600 group-hover:bg-amber-500 group-hover:text-slate-950 flex items-center justify-center transition-colors">
+                  <Icon className="w-6 h-6 transition-transform group-hover:scale-110" />
+                </div>
+                <span className="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 group-hover:bg-amber-50 group-hover:text-amber-800 transition-colors">
+                  {card.badge}
+                </span>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-bold text-slate-900 group-hover:text-amber-700 transition-colors mb-1.5">
+                  {card.title}
+                </h3>
+                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                  {card.description}
+                </p>
+              </div>
+
+              <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                <span className="font-semibold text-[11px] text-amber-600">Balaji Tourist</span>
+                <span className="group-hover:translate-x-1 transition-transform text-slate-400 group-hover:text-amber-600">→</span>
+              </div>
+            </motion.div>
+          )
+        })}
+      </div>
+    </section>
+  )
+}

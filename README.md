@@ -1,32 +1,69 @@
-# React + TypeScript + Vite
+# Balaji Tourist – Bangalore Tourist Transportation & Car Rental Service
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern, production-ready website for **Balaji Tourist**, based in **Bangalore, Karnataka, India**.
 
-Currently, two official plugins are available:
+Built with React 18, Vite, Tailwind CSS, Framer Motion, and Lucide Icons.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚗 Business Details
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Business Name**: Balaji Tourist
+- **Positioning**: Bangalore Tourist Transportation & Car Rental Service
+- **Phone**: [+91 9035018855](tel:+919035018855)
+- **Email**: [balajitouristblr@gmail.com](mailto:balajitouristblr@gmail.com)
+- **Location**: Bangalore, Karnataka, India
 
-## Expanding the Oxlint configuration
+---
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## 🚙 Vehicle Fleet
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+- **Toyota Innova**: A comfortable option for family and tourist travel.
+- **Toyota Etios**: A practical option for city and tourist travel.
+- **Maruti Suzuki Swift Dzire**: A compact sedan option for comfortable travel.
+
+All vehicle availability is confirmed on direct enquiry.
+
+---
+
+## 🌟 Key Sections
+
+1. **Hero**: Visual travel hero with headline *"EXPLORE BANGALORE. TRAVEL BEYOND."*, interactive vehicle preview switch, and quick call/enquiry CTAs.
+2. **Hero Highlights**: 4 compact feature cards covering Bangalore Based, Comfortable Vehicles, Family Travel, and Outstation Travel.
+3. **About Section**: Factual overview highlighting tourist transportation, Bangalore sightseeing, and outstation travel.
+4. **Services**: 6 whitelisted tourist services (Bangalore Sightseeing, Outstation Travel, Family Travel, Tourist Transportation, Local Travel, Customized Travel).
+5. **Bangalore Sightseeing**: Visual travel inspiration showcasing Vidhana Soudha, Bangalore Palace, Lalbagh, Cubbon Park, and Bengaluru City.
+6. **Karnataka Travel**: Scenic inspiration covering Mysuru, Coorg, Chikmagalur, Hampi, and Nilgiri gateways.
+7. **Vehicles**: Card showcase for Toyota Innova, Toyota Etios, and Maruti Suzuki Swift Dzire with "Contact us for availability", direct Call, WhatsApp, and Enquire actions.
+8. **Booking / Travel Enquiry**: Interactive form generating direct pre-filled WhatsApp inquiries with instant confirmation.
+9. **Contact**: Dedicated phone, email, WhatsApp, and location details.
+10. **Global Enquiry Modal & Floating CTAs**: Seamless booking and WhatsApp float for maximum conversion.
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 18+ (tested on Node 22)
+- npm
+
+### Installation & Development
+
+```bash
+# 1. Install dependencies
+npm install
+
+# 2. Start development server
+npm run dev
+
+# 3. Build for production
+npm run build
+
+# 4. Preview production build
+npm run preview
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+---
+
+## 📄 License
+Private project for Balaji Tourist.

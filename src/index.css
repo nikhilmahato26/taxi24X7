@@ -1,389 +1,101 @@
-/* ==========================================================================
-   AXI 24X7 - PECAB DESIGN SYSTEM
-   Royal Navy Blue (#003B95), Deep Dark Blue (#0A1F44), Vibrant Yellow (#FFD200)
-   Typography: Plus Jakarta Sans & Inter
-   ========================================================================== */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  /* Brand Colors from pecab.in */
-  --yellow-primary: #FFD200;
-  --yellow-hover: #e6bd00;
-  --yellow-light: #FFF9DB;
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
   
-  --blue-primary: #003B95;
-  --blue-hover: #002d73;
-  --blue-dark: #0A1F44;
-  --blue-light: #EEF4FF;
-  --blue-soft: #D9E6FF;
+  html {
+    scroll-behavior: smooth;
+  }
   
-  --whatsapp-green: #25D366;
-  --whatsapp-dark: #1EBE5D;
-  
-  --gray-bg: #F7F9FC;
-  --gray-card: #FFFFFF;
-  --gray-border: #E2E8F0;
-  --gray-border-subtle: #EEF2F7;
-  
-  --text-dark: #0A1F44;
-  --text-body: #1E293B;
-  --text-muted: #64748B;
-  --text-light: #94A3B8;
+  body {
+    font-family: 'Plus Jakarta Sans', Inter, system-ui, sans-serif;
+    background-color: #F8FAFC;
+    color: #0F172A;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-  --shadow-sm: 0 2px 8px rgba(10, 31, 68, 0.05);
-  --shadow-md: 0 6px 20px rgba(0, 59, 149, 0.08);
-  --shadow-lg: 0 12px 35px rgba(0, 59, 149, 0.12);
-  --shadow-xl: 0 20px 50px rgba(10, 31, 68, 0.16);
-  --shadow-yellow: 0 4px 20px rgba(255, 210, 0, 0.4);
-  --shadow-blue: 0 4px 20px rgba(0, 59, 149, 0.3);
-  --shadow-whatsapp: 0 4px 20px rgba(37, 211, 102, 0.4);
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  }
 
-  --font-sans: 'Plus Jakarta Sans', Inter, system-ui, -apple-system, sans-serif;
-  --container-max: 1240px;
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }
 
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-gradient-to-r from-gold-500 to-gold-600 text-slate-950 font-bold px-6 py-3.5 rounded-full transition-all duration-200 hover:from-gold-400 hover:to-gold-500 hover:shadow-lg hover:shadow-gold-500/25 active:scale-95 focus:outline-none focus:ring-4 focus:ring-gold-500/30;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 bg-white text-brand-navy font-bold px-6 py-3.5 rounded-full border border-slate-200 shadow-sm transition-all duration-200 hover:bg-slate-50 hover:border-slate-300 hover:shadow-md active:scale-95 focus:outline-none focus:ring-4 focus:ring-slate-200;
+  }
+
+  .btn-dark {
+    @apply inline-flex items-center justify-center gap-2 bg-slate-900 text-white font-bold px-6 py-3.5 rounded-full transition-all duration-200 hover:bg-slate-800 hover:shadow-lg hover:shadow-slate-900/20 active:scale-95 focus:outline-none focus:ring-4 focus:ring-slate-900/30;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border border-white/30 text-white font-bold px-6 py-3.5 rounded-full backdrop-blur-sm bg-white/10 transition-all duration-200 hover:bg-white hover:text-slate-900 active:scale-95 focus:outline-none focus:ring-4 focus:ring-white/40;
+  }
+
+  .section-badge {
+    @apply inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase bg-brand-50 text-brand-800 border border-brand-200/60 mb-4;
+  }
+
+  .section-badge-gold {
+    @apply inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase bg-amber-50 text-amber-900 border border-amber-200 mb-4;
+  }
+
+  .section-title {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15];
+  }
+
+  .section-sub {
+    @apply text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/60 shadow-card;
+  }
+
+  .glass-dark {
+    @apply bg-slate-900/85 backdrop-blur-xl border border-white/10;
+  }
 }
 
-html {
-  scroll-behavior: smooth;
-  font-family: var(--font-sans);
-  color: var(--text-body);
-  background-color: #FFFFFF;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  overflow-x: hidden;
-  background-color: #FFFFFF;
-  color: var(--text-body);
-  min-height: 100vh;
-}
-
-/* Custom Scrollbar */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--gray-bg);
+  background: #F1F5F9;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--blue-primary);
+  background: #CBD5E1;
   border-radius: 4px;
 }
-
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: all 0.2s ease;
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
 }
 
-button, input, select, textarea {
-  font-family: inherit;
+/* Pulse animation for floating WhatsApp */
+@keyframes whatsapp-glow {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+  70% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
-/* Base Container */
-.container-custom {
-  width: 100%;
-  max-width: var(--container-max);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
-@media (min-width: 640px) {
-  .container-custom {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
-/* ==========================================================================
-   PECAB EXACT BUTTON CLASSES
-   ========================================================================== */
-
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  border-radius: 9999px;
-  background-color: var(--yellow-primary);
-  color: var(--blue-dark);
-  padding: 0.75rem 1.6rem;
-  font-weight: 700;
-  font-size: 0.95rem;
-  line-height: 1.2;
-  cursor: pointer;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 16px rgba(255, 210, 0, 0.35);
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  background-color: #ffd924;
-  box-shadow: 0 6px 24px rgba(255, 210, 0, 0.5);
-  color: var(--blue-dark);
-}
-
-.btn-primary:active {
-  transform: translateY(0);
-  scale: 0.98;
-}
-
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  border-radius: 9999px;
-  background-color: var(--blue-primary);
-  color: #FFFFFF;
-  padding: 0.75rem 1.6rem;
-  font-weight: 700;
-  font-size: 0.95rem;
-  line-height: 1.2;
-  cursor: pointer;
-  border: none;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 16px rgba(0, 59, 149, 0.25);
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.btn-secondary:hover {
-  transform: translateY(-2px);
-  background-color: #004bbd;
-  color: #FFFFFF;
-  box-shadow: 0 6px 24px rgba(0, 59, 149, 0.35);
-}
-
-.btn-secondary:active {
-  transform: translateY(0);
-  scale: 0.98;
-}
-
-.btn-outline {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  border-radius: 9999px;
-  background-color: transparent;
-  color: var(--blue-primary);
-  border: 2px solid var(--blue-primary);
-  padding: 0.7rem 1.5rem;
-  font-weight: 700;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.btn-outline:hover {
-  transform: translateY(-2px);
-  background-color: var(--blue-primary);
-  color: #FFFFFF;
-  box-shadow: 0 4px 16px rgba(0, 59, 149, 0.2);
-}
-
-.btn-whatsapp {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  border-radius: 9999px;
-  background-color: var(--whatsapp-green);
-  color: #FFFFFF;
-  padding: 0.65rem 1.4rem;
-  font-weight: 700;
-  font-size: 0.9rem;
-  cursor: pointer;
-  border: none;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.btn-whatsapp:hover {
-  transform: translateY(-2px);
-  background-color: #1ebe5d;
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
-  color: #FFFFFF;
-}
-
-/* ==========================================================================
-   PECAB SECTION HEADINGS & BADGES
-   ========================================================================== */
-
-.section-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  border-radius: 9999px;
-  background-color: var(--blue-light);
-  color: var(--blue-primary);
-  padding: 0.4rem 1.1rem;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 0.85rem;
-}
-
-.section-label-yellow {
-  background-color: var(--yellow-light);
-  color: #8c6e00;
-}
-
-.section-title {
-  font-size: 1.85rem;
-  line-height: 1.2;
-  font-weight: 800;
-  color: var(--blue-dark);
-  letter-spacing: -0.025em;
-  margin-bottom: 0.85rem;
-}
-
-@media (min-width: 768px) {
-  .section-title {
-    font-size: 2.35rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .section-title {
-    font-size: 2.85rem;
-  }
-}
-
-.section-sub {
-  font-size: 1.05rem;
-  line-height: 1.6;
-  color: var(--text-muted);
-  max-width: 44rem;
-}
-
-/* ==========================================================================
-   PECAB CARD HOVER
-   ========================================================================== */
-
-.card-hover {
-  background-color: #FFFFFF;
-  border: 1px solid var(--gray-border-subtle);
-  border-radius: 1.25rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: var(--shadow-sm);
-}
-
-.card-hover:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-  border-color: #D3E0F5;
-}
-
-/* ==========================================================================
-   FLOATING WHATSAPP & PULSE
-   ========================================================================== */
-
-@keyframes whatsapp-pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
-  }
-  70% {
-    box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-  }
-}
-
-.whatsapp-pulse {
-  animation: whatsapp-pulse 2s infinite;
-}
-
-/* Utilities */
-.bg-pecab-navy {
-  background-color: var(--blue-dark);
-}
-
-.bg-pecab-blue {
-  background-color: var(--blue-primary);
-}
-
-.bg-pecab-gray {
-  background-color: var(--gray-bg);
-}
-
-.text-pecab-navy {
-  color: var(--blue-dark);
-}
-
-.text-pecab-blue {
-  color: var(--blue-primary);
-}
-
-.text-pecab-yellow {
-  color: var(--yellow-primary);
-}
-
-.border-pecab-border {
-  border-color: var(--gray-border-subtle);
-}
-
-/* Modal Backdrop */
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background-color: rgba(10, 31, 68, 0.7);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  z-index: 999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  overflow-y: auto;
-}
-
-/* Form inputs */
-.form-input {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border-radius: 0.75rem;
-  border: 1px solid var(--gray-border);
-  background-color: #FFFFFF;
-  color: var(--text-dark);
-  font-size: 0.95rem;
-  transition: all 0.2s ease;
-  outline: none;
-}
-
-.form-input:focus {
-  border-color: var(--blue-primary);
-  box-shadow: 0 0 0 3px rgba(0, 59, 149, 0.15);
-}
-
-/* Floating animation for hero elements */
-@keyframes float-subtle {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-}
-
-.animate-float {
-  animation: float-subtle 4s ease-in-out infinite;
+.whatsapp-glow {
+  animation: whatsapp-glow 2.5s infinite;
 }
