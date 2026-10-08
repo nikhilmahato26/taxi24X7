@@ -1,69 +1,62 @@
-# Balaji Tourist – Bangalore Tourist Transportation & Car Rental Service
+# AXI 24X7 – 24x7 North India Taxi & Travel Services
 
-A modern, production-ready website for **Balaji Tourist**, based in **Bangalore, Karnataka, India**.
-
-Built with React 18, Vite, Tailwind CSS, Framer Motion, and Lucide Icons.
+Production-ready, conversion-focused website for **AXI 24X7**, providing 24x7 taxi services, outstation travel, and North India tour packages.
 
 ---
 
-## 🚗 Business Details
+## 🚖 Business Details
 
-- **Business Name**: Balaji Tourist
-- **Positioning**: Bangalore Tourist Transportation & Car Rental Service
-- **Phone**: [+91 9035018855](tel:+919035018855)
-- **Email**: [balajitouristblr@gmail.com](mailto:balajitouristblr@gmail.com)
-- **Location**: Bangalore, Karnataka, India
+- **Business Name**: AXI 24X7
+- **Service Type**: 24x7 Taxi & Travel Services
+- **Primary Phone**: [+91 9815657986](tel:+919815657986)
+- **Email**: [taxi24x707@gmail.com](mailto:taxi24x707@gmail.com)
+- **GST Number**: `03BZHPK5217Q1Z2`
+- **Primary Service Area**: North India (Delhi, Chandigarh, Punjab, Mohali, Himachal Pradesh, Uttar Pradesh, Haryana, Jammu & Kashmir, Rajasthan, Uttarakhand)
 
----
-
-## 🚙 Vehicle Fleet
-
-- **Toyota Innova**: A comfortable option for family and tourist travel.
-- **Toyota Etios**: A practical option for city and tourist travel.
-- **Maruti Suzuki Swift Dzire**: A compact sedan option for comfortable travel.
-
-All vehicle availability is confirmed on direct enquiry.
+### Operating Locations:
+1. **City Plaza, Peermuchalla, Chandigarh** (Chandigarh / Tri-City Hub)
+2. **Rajendra Park, Sector 105, Gurgaon, Haryana** (Delhi NCR / Haryana Hub)
 
 ---
 
-## 🌟 Key Sections
+## 🚙 Vehicle Fleet & Rates
 
-1. **Hero**: Visual travel hero with headline *"EXPLORE BANGALORE. TRAVEL BEYOND."*, interactive vehicle preview switch, and quick call/enquiry CTAs.
-2. **Hero Highlights**: 4 compact feature cards covering Bangalore Based, Comfortable Vehicles, Family Travel, and Outstation Travel.
-3. **About Section**: Factual overview highlighting tourist transportation, Bangalore sightseeing, and outstation travel.
-4. **Services**: 6 whitelisted tourist services (Bangalore Sightseeing, Outstation Travel, Family Travel, Tourist Transportation, Local Travel, Customized Travel).
-5. **Bangalore Sightseeing**: Visual travel inspiration showcasing Vidhana Soudha, Bangalore Palace, Lalbagh, Cubbon Park, and Bengaluru City.
-6. **Karnataka Travel**: Scenic inspiration covering Mysuru, Coorg, Chikmagalur, Hampi, and Nilgiri gateways.
-7. **Vehicles**: Card showcase for Toyota Innova, Toyota Etios, and Maruti Suzuki Swift Dzire with "Contact us for availability", direct Call, WhatsApp, and Enquire actions.
-8. **Booking / Travel Enquiry**: Interactive form generating direct pre-filled WhatsApp inquiries with instant confirmation.
-9. **Contact**: Dedicated phone, email, WhatsApp, and location details.
-10. **Global Enquiry Modal & Floating CTAs**: Seamless booking and WhatsApp float for maximum conversion.
+| Vehicle | Category | Rate | Description |
+|---|---|---|---|
+| **Maruti Suzuki Dzire** | Sedan | **₹12/km** | Comfortable & economical sedan for city & outstation travel |
+| **Maruti Suzuki Ertiga** | MUV | **₹15/km** | Spacious MUV choice for family trips & hill stations |
+| **Kia Carens** | MUV | **₹18/km** | Modern premium MUV with refined ride comfort |
+| **Toyota Innova Crysta** | Premium | **₹20/km** | Gold standard premium outstation cruiser |
+| **Toyota Innova Hycross** | Premium | **₹25/km** | Next-generation luxury travel experience |
+| **Tempo Traveller** | Group Travel | **₹35/km** | Ideal for group tours, corporate journeys & Char Dham pilgrimage |
+
+> *Rates shown are client-provided per-kilometre rates. Final fare may depend on trip requirements. Contact AXI 24X7 for a quote.*
+
+---
+
+## 🗺️ Routes & Packages
+
+- **Delhi to Popular Destinations (21 Routes)**: Chandigarh, Shimla, Manali, Dehradun, Rishikesh, Haridwar, Jaipur, Agra/Mathura/Vrindavan, Haldwani, Mussoorie, Nainital, Khatu Shyam, Jammu, Badrinath, Kedarnath, Kashmir, Amritsar, Lucknow, Bihar, Punjab, Ayodhya.
+- **Chandigarh to Popular Destinations (16 Routes)**: Delhi, Dehradun, Shimla, Manali, Jammu, Haridwar, Jaipur, Kasol, Dharamshala, Agra, Amritsar, Himachal, 5 Devi Yatra, Mussoorie, Noida, Kufri.
+- **North India Tour Packages (6 Packages)**:
+  - Himachal Tour Package (Shimla, Manali, mountains, snow, scenic roads)
+  - Uttarakhand Tour Package (Dehradun, Mussoorie, Rishikesh, Nainital)
+  - Char Dham Tour Package (Yamunotri, Gangotri, Kedarnath, Badrinath)
+  - Kashmir Tour Package (Srinagar, Gulmarg, Pahalgam, Sonamarg)
+  - Rajasthan Tour Package (Jaipur, Jodhpur, Udaipur, desert roads)
+  - Agra Mathura Vrindavan Tour Package (Taj Mahal, Mathura & Vrindavan temples)
 
 ---
 
 ## 🚀 Quick Start
 
-### Prerequisites
-- Node.js 18+ (tested on Node 22)
-- npm
-
-### Installation & Development
-
 ```bash
-# 1. Install dependencies
+# Install dependencies
 npm install
 
-# 2. Start development server
+# Run dev server
 npm run dev
 
-# 3. Build for production
+# Build for production
 npm run build
-
-# 4. Preview production build
-npm run preview
 ```
-
----
-
-## 📄 License
-Private project for Balaji Tourist.
