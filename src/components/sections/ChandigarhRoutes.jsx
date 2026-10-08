@@ -85,7 +85,7 @@ export default function ChandigarhRoutes({ onOpenEnquiry }) {
 
                 <a
                   href={`https://wa.me/${contact.whatsappRaw}?text=${encodeURIComponent(
-                    `Hello AXI 24X7, I want to book / enquire for ${route.displayName}. Please share vehicle options and quote.`
+                    `Hello TAXI 24X7, I want to book / enquire for ${route.displayName}. Please share vehicle options and quote.`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -102,7 +102,7 @@ export default function ChandigarhRoutes({ onOpenEnquiry }) {
 
         {filteredRoutes.length === 0 && (
           <div className="text-center py-12 text-slate-400">
-            <p>No routes found matching "{searchTerm}". Contact AXI 24X7 directly for customized routes.</p>
+            <p>No routes found matching "{searchTerm}". Contact TAXI 24X7 directly for customized routes.</p>
           </div>
         )}
       </div>

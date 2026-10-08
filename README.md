@@ -1,12 +1,12 @@
-# AXI 24X7 – 24x7 North India Taxi & Travel Services
+# TAXI 24 X 7 – 24x7 North India Taxi & Travel Services
 
-Production-ready, conversion-focused website for **AXI 24X7**, providing 24x7 taxi services, outstation travel, and North India tour packages.
+Production-ready, conversion-focused website for **TAXI 24 X 7**, providing 24x7 taxi services, outstation travel, and North India tour packages.
 
 ---
 
 ## 🚖 Business Details
 
-- **Business Name**: AXI 24X7
+- **Business Name**: TAXI 24 X 7
 - **Service Type**: 24x7 Taxi & Travel Services
 - **Primary Phone**: [+91 9815657986](tel:+919815657986)
 - **Email**: [taxi24x707@gmail.com](mailto:taxi24x707@gmail.com)
@@ -30,7 +30,7 @@ Production-ready, conversion-focused website for **AXI 24X7**, providing 24x7 ta
 | **Toyota Innova Hycross** | Premium | **₹25/km** | Next-generation luxury travel experience |
 | **Tempo Traveller** | Group Travel | **₹35/km** | Ideal for group tours, corporate journeys & Char Dham pilgrimage |
 
-> *Rates shown are client-provided per-kilometre rates. Final fare may depend on trip requirements. Contact AXI 24X7 for a quote.*
+> *Rates shown are client-provided per-kilometre rates. Final fare may depend on trip requirements. Contact TAXI 24 X 7 for a quote.*
 
 ---
 

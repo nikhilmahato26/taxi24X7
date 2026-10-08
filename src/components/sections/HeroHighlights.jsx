@@ -43,7 +43,7 @@ export default function HeroHighlights({ onOpenEnquiry }) {
               </div>
 
               <div className="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-xs text-slate-500">
-                <span className="font-bold text-[11px] text-amber-500">AXI 24X7</span>
+                <span className="font-bold text-[11px] text-amber-500">TAXI 24X7</span>
                 <span className="group-hover:translate-x-1 transition-transform text-slate-500 group-hover:text-amber-400">→</span>
               </div>
             </motion.div>

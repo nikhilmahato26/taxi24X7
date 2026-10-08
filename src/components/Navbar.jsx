@@ -80,7 +80,7 @@ export default function Navbar({ onOpenEnquiry }) {
             type="button"
             onClick={() => scrollTo('#home')}
             className="flex items-center gap-3 text-left focus:outline-none group"
-            aria-label="AXI 24X7 Home"
+            aria-label="TAXI 24X7 Home"
           >
             <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-amber-500 via-amber-400 to-yellow-300 flex items-center justify-center text-slate-950 font-black shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
               <Car className="w-6 h-6 text-slate-950" />
@@ -147,7 +147,7 @@ export default function Navbar({ onOpenEnquiry }) {
             <a
               href={contact.phoneTel}
               className="w-10 h-10 rounded-xl bg-amber-500/15 text-amber-400 border border-amber-500/30 flex items-center justify-center font-bold"
-              aria-label="Call AXI 24X7"
+              aria-label="Call TAXI 24X7"
             >
               <Phone className="w-4 h-4" />
             </a>

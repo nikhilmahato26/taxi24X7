@@ -159,7 +159,7 @@ export default function Hero({ onOpenEnquiry }) {
               </div>
 
               <p className="text-[11px] text-slate-400 leading-relaxed mb-5">
-                * Final fare may depend on trip requirements. Contact AXI 24X7 for a quote for your journey.
+                * Final fare may depend on trip requirements. Contact TAXI 24X7 for a quote for your journey.
               </p>
 
               <div className="grid grid-cols-2 gap-3">
@@ -172,7 +172,7 @@ export default function Hero({ onOpenEnquiry }) {
                 </button>
                 <a
                   href={`https://wa.me/${contact.whatsappRaw}?text=${encodeURIComponent(
-                    'Hello AXI 24X7, I want to check taxi availability and fare for my travel in North India.'
+                    'Hello TAXI 24X7, I want to check taxi availability and fare for my travel in North India.'
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"

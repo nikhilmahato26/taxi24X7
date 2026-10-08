@@ -1,5 +1,5 @@
 // ============================================================
-// AXI 24X7 – siteContent.js
+// TAXI 24X7 – siteContent.js
 // Single source of truth for 24x7 Taxi & Travel Services across North India
 // ============================================================
 
@@ -8,10 +8,10 @@ import fleetDzireImg from '../assets/images/fleet-swift-dzire.jpg'
 
 // ─── 1. Brand & Business Information ────────────────────────
 export const brand = {
-  name: 'AXI 24X7',
+  name: 'TAXI 24 X 7',
   serviceType: '24x7 Taxi & Travel Services',
   tagline: 'Your Journey, Our Drive',
-  eyebrow: 'AXI 24X7 • NORTH INDIA TAXI SERVICES',
+  eyebrow: 'TAXI 24X7 • NORTH INDIA TAXI SERVICES',
   heroHeading: 'YOUR JOURNEY, OUR DRIVE',
   heroSubheading:
     'Reliable taxi services, outstation travel and North India tour packages connecting Delhi, Chandigarh, Himachal, Uttarakhand, Kashmir, Rajasthan and more.',
@@ -22,7 +22,7 @@ export const brand = {
 
 // ─── 2. Contact & Business Details ──────────────────────────
 export const contact = {
-  businessName: 'AXI 24X7',
+  businessName: 'TAXI 24X7',
   phone: '+91 9815657986',
   phoneTel: 'tel:+919815657986',
   phoneDisplay: '+91 98156 57986',
@@ -33,7 +33,7 @@ export const contact = {
   whatsappRaw: '919815657986',
   whatsappUrl: 'https://wa.me/919815657986',
   defaultWhatsAppMessage:
-    'Hello AXI 24X7, I want to enquire about taxi booking / outstation travel in North India.',
+    'Hello TAXI 24X7, I want to enquire about taxi booking / outstation travel in North India.',
 }
 
 // ─── 3. Business Locations ──────────────────────────────────
@@ -120,7 +120,7 @@ export const vehicles = [
 
 export const rateNotes = {
   primaryNotice:
-    'Rates shown are the client-provided per-kilometre rates. Contact AXI 24X7 for the applicable fare for your journey and trip requirements.',
+    'Rates shown are the client-provided per-kilometre rates. Contact TAXI 24X7 for the applicable fare for your journey and trip requirements.',
   disclaimer: 'Final fare may depend on trip requirements. Contact us for a quote.',
 }
 
@@ -160,9 +160,9 @@ export const heroHighlights = [
 export const aboutContent = {
   heading: 'YOUR NORTH INDIA TRAVEL PARTNER',
   paragraph:
-    'AXI 24X7 provides taxi and travel services across North India, connecting customers to major cities, hill stations, pilgrimage destinations and tourist destinations. With a range of cars and Tempo Traveller options, customers can enquire for local, intercity and outstation travel requirements.',
+    'TAXI 24X7 provides taxi and travel services across North India, connecting customers to major cities, hill stations, pilgrimage destinations and tourist destinations. With a range of cars and Tempo Traveller options, customers can enquire for local, intercity and outstation travel requirements.',
   locationsIntro:
-    'With operating locations in Chandigarh (Peermuchalla) and Gurgaon (Sector 105), AXI 24X7 connects travelers across North India seamlessly.',
+    'With operating locations in Chandigarh (Peermuchalla) and Gurgaon (Sector 105), TAXI 24X7 connects travelers across North India seamlessly.',
 }
 
 // ─── 7. Taxi Services ───────────────────────────────────────
@@ -544,7 +544,7 @@ export const tourPackages = [
     region: 'Himachal Pradesh',
     subtitle: 'Shimla • Manali • Mountains • Snow • Scenic Roads',
     description:
-      'Explore scenic hill stations, snow-capped peaks, and beautiful Himalayan valleys with comfortable AXI 24X7 cabs and tempo travellers.',
+      'Explore scenic hill stations, snow-capped peaks, and beautiful Himalayan valleys with comfortable TAXI 24X7 cabs and tempo travellers.',
     image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1000&q=80',
     ctaText: 'Enquire About Himachal',
     tag: 'Hill Tour Highlight',
@@ -577,7 +577,7 @@ export const tourPackages = [
     region: 'Jammu & Kashmir',
     subtitle: 'Srinagar • Gulmarg • Pahalgam • Sonamarg',
     description:
-      'Plan a comfortable journey to Kashmir with AXI 24X7. Enquire about available tour and transportation options connecting Delhi, Chandigarh and Kashmir.',
+      'Plan a comfortable journey to Kashmir with TAXI 24X7. Enquire about available tour and transportation options connecting Delhi, Chandigarh and Kashmir.',
     image: 'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1000&q=80',
     ctaText: 'Enquire for Kashmir',
     tag: 'Discover Kashmir',

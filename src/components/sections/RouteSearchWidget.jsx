@@ -191,12 +191,12 @@ export default function RouteSearchWidget({ onOpenEnquiry }) {
                 {/* Quick WhatsApp & Call Action Strip */}
                 <div className="mt-5 flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-800/80">
                   <span className="text-xs text-slate-400 font-semibold">
-                    Ready to book? Speak to AXI 24X7 directly:
+                    Ready to book? Speak to TAXI 24X7 directly:
                   </span>
                   <div className="flex items-center gap-3">
                     <a
                       href={`https://wa.me/${contact.whatsappRaw}?text=${encodeURIComponent(
-                        `Hello AXI 24X7, I am enquiring about ${activeResult.displayName}. Please share vehicle availability and quote.`
+                        `Hello TAXI 24X7, I am enquiring about ${activeResult.displayName}. Please share vehicle availability and quote.`
                       )}`}
                       target="_blank"
                       rel="noopener noreferrer"

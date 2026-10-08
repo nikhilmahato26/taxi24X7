@@ -47,7 +47,7 @@ export default function ServiceArea({ onOpenEnquiry }) {
 
               <div className="mt-4 pt-2 border-t border-slate-900 flex items-center justify-between text-[11px] text-slate-500">
                 <span>Active Corridor</span>
-                <span className="text-amber-400 font-bold">AXI 24X7</span>
+                <span className="text-amber-400 font-bold">TAXI 24X7</span>
               </div>
             </motion.div>
           ))}

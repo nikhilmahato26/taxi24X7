@@ -36,7 +36,7 @@ export default function EnquiryModal({
     const rateText = matchedVehicle ? ` (${matchedVehicle.rateDisplay})` : ''
 
     const lines = [
-      '👋 Hello AXI 24X7, I would like to book a taxi / enquire about a trip:',
+      '👋 Hello TAXI 24X7, I would like to book a taxi / enquire about a trip:',
       '',
       `🚗 Vehicle: ${selectedVehicle}${rateText}`,
       `📍 From: ${pickupCity}`,
@@ -80,7 +80,7 @@ export default function EnquiryModal({
             </button>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-black bg-slate-950 text-amber-400 mb-2">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-              AXI 24X7 • 24x7 North India Taxi
+              TAXI 24X7 • 24x7 North India Taxi
             </div>
             <h3 className="text-xl sm:text-2xl font-black tracking-tight text-slate-950">
               Book a Taxi / Enquire Route
@@ -99,7 +99,7 @@ export default function EnquiryModal({
                 </div>
                 <h4 className="text-xl font-black text-white">Enquiry Prepared!</h4>
                 <p className="text-slate-300 text-sm mt-2 max-w-sm mx-auto">
-                  Your trip details are forwarded to WhatsApp. You can also dial AXI 24X7 directly at{' '}
+                  Your trip details are forwarded to WhatsApp. You can also dial TAXI 24X7 directly at{' '}
                   <strong className="text-amber-400">{contact.phone}</strong> for instant assistance.
                 </p>
                 <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">

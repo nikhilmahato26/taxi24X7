@@ -75,7 +75,7 @@ export default function Services({ onOpenEnquiry }) {
 
                   <a
                     href={`https://wa.me/${contact.whatsappRaw}?text=${encodeURIComponent(
-                      `Hello AXI 24X7, I want to enquire about ${service.title}.`
+                      `Hello TAXI 24X7, I want to enquire about ${service.title}.`
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"

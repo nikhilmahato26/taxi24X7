@@ -18,7 +18,7 @@ export default function LocationsContact({ onOpenEnquiry }) {
           </h2>
 
           <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
-            AXI 24X7 operates across North India with dedicated operational hubs in Chandigarh and Gurgaon. Reach us around the clock for enquiries and bookings.
+            TAXI 24X7 operates across North India with dedicated operational hubs in Chandigarh and Gurgaon. Reach us around the clock for enquiries and bookings.
           </p>
         </div>
 

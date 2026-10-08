@@ -18,7 +18,7 @@ export default function CTAStrip({ onOpenEnquiry }) {
             </h2>
 
             <p className="text-slate-950/80 font-semibold text-sm sm:text-base mt-2">
-              Book your taxi or outstation ride now with AXI 24X7. Rates starting from ₹12/km. Call or WhatsApp our team anytime.
+              Book your taxi or outstation ride now with TAXI 24X7. Rates starting from ₹12/km. Call or WhatsApp our team anytime.
             </p>
           </div>
 

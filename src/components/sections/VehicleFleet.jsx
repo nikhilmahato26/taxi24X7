@@ -73,7 +73,7 @@ export default function VehicleFleet({ onOpenEnquiry }) {
 
                   <img
                     src={vehicle.image}
-                    alt={`${vehicle.name} - AXI 24X7 North India Taxi`}
+                    alt={`${vehicle.name} - TAXI 24X7 North India Taxi`}
                     className="w-full h-full object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.8)] transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />
@@ -98,7 +98,7 @@ export default function VehicleFleet({ onOpenEnquiry }) {
                   </div>
 
                   <div className="text-[11px] text-slate-400 italic">
-                    Contact AXI 24X7 for total fare calculation.
+                    Contact TAXI 24X7 for total fare calculation.
                   </div>
                 </div>
               </div>
@@ -125,7 +125,7 @@ export default function VehicleFleet({ onOpenEnquiry }) {
 
                   <a
                     href={`https://wa.me/${contact.whatsappRaw}?text=${encodeURIComponent(
-                      `Hello AXI 24X7, I want to check availability and fare quote for ${vehicle.name} (${vehicle.rateDisplay}).`
+                      `Hello TAXI 24X7, I want to check availability and fare quote for ${vehicle.name} (${vehicle.rateDisplay}).`
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"

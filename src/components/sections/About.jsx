@@ -52,7 +52,7 @@ export default function About({ onOpenEnquiry }) {
           <div className="lg:col-span-7">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black tracking-wider uppercase bg-amber-500/15 text-amber-400 border border-amber-500/30 mb-4">
               <Compass className="w-3.5 h-3.5" />
-              <span>About AXI 24X7</span>
+              <span>About TAXI 24X7</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight mb-6">

@@ -38,7 +38,7 @@ export default function TourPackages({ onOpenEnquiry }) {
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <img
                     src={pkg.image}
-                    alt={`${pkg.title} - AXI 24X7`}
+                    alt={`${pkg.title} - TAXI 24X7`}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />
@@ -94,7 +94,7 @@ export default function TourPackages({ onOpenEnquiry }) {
 
                   <a
                     href={`https://wa.me/${contact.whatsappRaw}?text=${encodeURIComponent(
-                      `Hello AXI 24X7, I am interested in ${pkg.title}. Please share available vehicle options and details.`
+                      `Hello TAXI 24X7, I am interested in ${pkg.title}. Please share available vehicle options and details.`
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -112,7 +112,7 @@ export default function TourPackages({ onOpenEnquiry }) {
         {/* Package enquiry note */}
         <div className="mt-12 text-center text-xs text-slate-400">
           <p>
-            Contact AXI 24X7 for customized multi-day itineraries, group travel requirements, and vehicle selection across North India.
+            Contact TAXI 24X7 for customized multi-day itineraries, group travel requirements, and vehicle selection across North India.
           </p>
         </div>
       </div>
