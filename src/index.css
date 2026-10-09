@@ -13,14 +13,10 @@
   
   body {
     font-family: 'Plus Jakarta Sans', Inter, system-ui, sans-serif;
-    background-color: #F8FAFC;
-    color: #0F172A;
+    background-color: #ffffff;
+    color: #1E293B;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -34,68 +30,53 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 bg-gradient-to-r from-gold-500 to-gold-600 text-slate-950 font-bold px-6 py-3.5 rounded-full transition-all duration-200 hover:from-gold-400 hover:to-gold-500 hover:shadow-lg hover:shadow-gold-500/25 active:scale-95 focus:outline-none focus:ring-4 focus:ring-gold-500/30;
+    @apply inline-flex items-center justify-center gap-2 bg-yellow-primary text-blue-dark font-bold px-6 py-3 rounded-full transition-all duration-200 hover:-translate-y-0.5 hover:shadow-yellow active:translate-y-0 active:scale-95 focus:outline-none focus:ring-4 focus:ring-yellow-primary/40;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 bg-white text-brand-navy font-bold px-6 py-3.5 rounded-full border border-slate-200 shadow-sm transition-all duration-200 hover:bg-slate-50 hover:border-slate-300 hover:shadow-md active:scale-95 focus:outline-none focus:ring-4 focus:ring-slate-200;
-  }
-
-  .btn-dark {
-    @apply inline-flex items-center justify-center gap-2 bg-slate-900 text-white font-bold px-6 py-3.5 rounded-full transition-all duration-200 hover:bg-slate-800 hover:shadow-lg hover:shadow-slate-900/20 active:scale-95 focus:outline-none focus:ring-4 focus:ring-slate-900/30;
+    @apply inline-flex items-center justify-center gap-2 bg-blue-primary text-white font-bold px-6 py-3 rounded-full transition-all duration-200 hover:-translate-y-0.5 hover:shadow-blue active:translate-y-0 active:scale-95 focus:outline-none focus:ring-4 focus:ring-blue-primary/30;
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-2 border border-white/30 text-white font-bold px-6 py-3.5 rounded-full backdrop-blur-sm bg-white/10 transition-all duration-200 hover:bg-white hover:text-slate-900 active:scale-95 focus:outline-none focus:ring-4 focus:ring-white/40;
+    @apply inline-flex items-center justify-center gap-2 border-2 border-blue-primary text-blue-primary font-bold px-6 py-3 rounded-full transition-all duration-200 hover:bg-blue-primary hover:text-white hover:-translate-y-0.5 active:scale-95 focus:outline-none focus:ring-4 focus:ring-blue-primary/30;
   }
 
-  .section-badge {
-    @apply inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase bg-brand-50 text-brand-800 border border-brand-200/60 mb-4;
-  }
-
-  .section-badge-gold {
-    @apply inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase bg-amber-50 text-amber-900 border border-amber-200 mb-4;
+  .section-label {
+    @apply inline-flex items-center gap-2 bg-blue-50 text-blue-primary font-semibold text-sm px-4 py-1.5 rounded-full mb-4;
   }
 
   .section-title {
-    @apply text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15];
+    @apply text-3xl md:text-4xl lg:text-5xl font-extrabold text-blue-dark leading-tight;
   }
 
   .section-sub {
-    @apply text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl;
+    @apply text-gray-500 text-lg leading-relaxed max-w-2xl;
   }
 
-  .glass-card {
-    @apply bg-white/80 backdrop-blur-md border border-white/60 shadow-card;
-  }
-
-  .glass-dark {
-    @apply bg-slate-900/85 backdrop-blur-xl border border-white/10;
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-card-hover;
   }
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #F1F5F9;
+  background: #F7F9FC;
 }
 ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #94A3B8;
+  background: #003B95;
+  border-radius: 3px;
 }
 
-/* Pulse animation for floating WhatsApp */
-@keyframes whatsapp-glow {
-  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
-  70% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+/* WhatsApp floating button pulse */
+@keyframes whatsapp-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
   100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
-.whatsapp-glow {
-  animation: whatsapp-glow 2.5s infinite;
+.whatsapp-pulse {
+  animation: whatsapp-pulse 2s infinite;
 }

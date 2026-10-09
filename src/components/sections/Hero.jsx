@@ -1,190 +1,241 @@
-import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { Phone, ArrowRight, ShieldCheck, MapPin, Car, Sparkles, Clock, CheckCircle2 } from 'lucide-react'
-import { brand, contact, vehicles } from '../../data/siteContent'
+import { useEffect, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { contact } from '../../data/siteContent'
+import heroBg1 from '../../assets/images/hero-bg-1.png'
+import heroBg2 from '../../assets/images/hero-bg-2.png'
+import heroBg3 from '../../assets/images/hero-bg-3.png'
+import fleetSwiftDzire from '../../assets/images/fleet-swift-dzire.png'
+import heroCarMpv from '../../assets/images/hero-car-mpv.png'
+import fleetKiaCarens from '../../assets/images/fleet-kia-carens.png'
+import fleetInnovaCrysta from '../../assets/images/fleet-innova-crysta.png'
+import fleetInnovaHycross from '../../assets/images/fleet-innova-hycross.png'
+import heroCarTraveller from '../../assets/images/hero-car-traveller.png'
 
-export default function Hero({ onOpenEnquiry }) {
+const heroFleet = [
+  { name: 'Dzire / Aura', type: 'Sedan', rate: '₹12/km', image: fleetSwiftDzire },
+  { name: 'Maruti Ertiga', type: 'MUV', rate: '₹15/km', image: heroCarMpv },
+  { name: 'Kia Carens', type: 'MUV Prime', rate: '₹18/km', image: fleetKiaCarens },
+  { name: 'Innova Crysta', type: 'SUV', rate: '₹20/km', image: fleetInnovaCrysta },
+  { name: 'Innova Hycross', type: 'Hybrid', rate: '₹25/km', image: fleetInnovaHycross },
+  { name: 'Tempo Traveller', type: '12-17 Seater', rate: '₹35/km', image: heroCarTraveller },
+]
+
+const heroBackgrounds = [
+  { src: heroBg1, alt: 'TAXI 24X7 reliable cab service across North India' },
+  { src: heroBg2, alt: 'Family travelling comfortably with TAXI 24X7' },
+  { src: heroBg3, alt: 'TAXI 24X7 outstation highway and hill tour cabs' },
+]
+
+export default function Hero() {
+  const [activeCar, setActiveCar] = useState(0)
+  const [activeBackground, setActiveBackground] = useState(0)
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setActiveBackground((current) => (current + 1) % heroBackgrounds.length)
+    }, 4500)
+
+    return () => window.clearInterval(interval)
+  }, [])
+
+  const selectedCar = heroFleet[activeCar]
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    const form = event.currentTarget
+
+    if (!form.checkValidity()) {
+      form.reportValidity()
+      return
+    }
+
+    const data = new FormData(form)
+    const message = [
+      'Hi TAXI 24X7, I want to book a taxi.',
+      '',
+      `Vehicle: ${data.get('vehicle')} (${selectedCar.rate})`,
+      `Trip Type: ${data.get('package')}`,
+      `Name: ${data.get('name')}`,
+      `Phone: ${data.get('mobile')}`,
+      `Travel Date: ${data.get('date')}`,
+      `Pickup (From): ${data.get('pickup')}`,
+      `Drop (To): ${data.get('drop')}`,
+      '',
+      'Please confirm vehicle availability and total fare estimate.',
+    ].join('\n')
+
+    const whatsappUrl = `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(message)}`
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer')
+  }
+
   return (
-    <section id="home" className="relative min-h-[92vh] flex items-center pt-32 pb-20 lg:pt-40 lg:pb-28 bg-slate-950 overflow-hidden text-white">
-      {/* Background imagery: North Indian mountain highway road-trip */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/70 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent z-10" />
-        <img
-          src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=2000&q=80"
-          alt="Himalayan mountain highway North India scenic taxi journey"
-          className="w-full h-full object-cover object-center opacity-40 scale-105"
+    <section id="home" className="relative overflow-hidden bg-[#080808] pt-16 md:pt-[4.75rem]">
+      {/* Background slide */}
+      <AnimatePresence mode="sync">
+        <motion.img
+          key={heroBackgrounds[activeBackground].src}
+          src={heroBackgrounds[activeBackground].src}
+          alt={heroBackgrounds[activeBackground].alt}
+          initial={{ opacity: 0, scale: 1.04 }}
+          animate={{ opacity: 0.9, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ opacity: { duration: 1 }, scale: { duration: 4.5, ease: 'linear' } }}
+          className="absolute inset-0 h-full w-full object-cover object-center"
         />
-        {/* Glow ambient spots */}
-        <div className="absolute top-1/4 left-1/4 -translate-x-1/2 w-96 h-96 bg-amber-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
-      </div>
+      </AnimatePresence>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/35 to-black/60 sm:bg-gradient-to-r sm:from-black/20 sm:via-black/30 sm:to-black/40" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left Hero Column */}
-          <div className="lg:col-span-7 text-center lg:text-left">
-            {/* Top 24x7 Announcement Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-black tracking-widest uppercase bg-amber-400 text-slate-950 mb-4 shadow-lg shadow-amber-400/20"
-            >
-              <Clock className="w-3.5 h-3.5" />
-              <span>24X7 TAXI SERVICE</span>
-            </motion.div>
-
-            {/* Eyebrow */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.05 }}
-              className="block text-xs sm:text-sm font-black tracking-widest uppercase text-amber-400 mb-3"
-            >
-              {brand.eyebrow}
-            </motion.div>
-
-            {/* Main Heading */}
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl sm:text-6xl md:text-7xl font-black text-white tracking-tight leading-[1.08] mb-6"
-            >
-              YOUR JOURNEY, <br />
-              <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent">
-                OUR DRIVE
-              </span>
-            </motion.h1>
-
-            {/* Supporting Text */}
+      <div className="relative z-10 mx-auto flex min-h-[720px] max-w-7xl items-center px-4 py-7 sm:min-h-[760px] sm:px-6 sm:py-10 lg:px-8 lg:py-14">
+        {/* Booking Form Card */}
+        <motion.form
+          initial={{ opacity: 0, x: -24 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.55, ease: 'easeOut' }}
+          onSubmit={handleSubmit}
+          className="w-full rounded-[1.75rem] bg-yellow-primary p-5 shadow-[0_24px_70px_rgba(0,0,0,0.5)] sm:max-w-[620px] sm:p-7 lg:p-8"
+        >
+          <div className="text-center">
+            <span className="text-[11px] font-black uppercase tracking-[0.28em] text-blue-dark/75">
+              24×7 Instant Booking • North India
+            </span>
+            <h1 className="mt-1 text-2xl font-black uppercase tracking-tight text-blue-dark sm:text-3xl">
+              Book Cab Online
+            </h1>
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-slate-300 text-base sm:text-lg md:text-xl font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-8"
+              animate={{ opacity: [1, 0.45, 1] }}
+              transition={{ duration: 1.4, repeat: Infinity, ease: 'easeInOut' }}
+              className="mt-0.5 text-xl sm:text-2xl font-black uppercase tracking-tight text-blue-dark"
             >
-              {brand.heroSubheading}
+              NORTH INDIA • 24X7
             </motion.p>
-
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10"
-            >
-              {/* Primary CTA */}
-              <button
-                type="button"
-                onClick={() => onOpenEnquiry && onOpenEnquiry()}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-amber-400 via-amber-500 to-amber-400 text-slate-950 font-black text-base shadow-xl shadow-amber-500/25 hover:shadow-amber-500/40 hover:scale-105 active:scale-95 transition-all"
-              >
-                <span>{brand.primaryCta}</span>
-                <ArrowRight className="w-5 h-5 text-slate-950" />
-              </button>
-
-              {/* Secondary CTA */}
-              <a
-                href={contact.phoneTel}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-7 py-4 rounded-full bg-white/10 hover:bg-white/15 text-white font-bold text-base border border-white/20 hover:border-white/40 backdrop-blur-sm transition-all"
-              >
-                <Phone className="w-5 h-5 text-amber-400" />
-                <span>
-                  {brand.secondaryCta}: <strong className="font-extrabold">{contact.phone}</strong>
-                </span>
-              </a>
-            </motion.div>
-
-            {/* Trust Badges */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="pt-6 border-t border-slate-800 flex flex-wrap items-center justify-center lg:justify-start gap-5 text-xs text-slate-300"
-            >
-              <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-amber-400" />
-                <span>Chandigarh (Peermuchalla) &amp; Gurgaon (Sec 105)</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Car className="w-4 h-4 text-amber-400" />
-                <span>Starting from ₹12/km</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                <span>GST: {contact.gstNumber}</span>
-              </div>
-            </motion.div>
+            <p className="text-[11px] font-bold text-blue-dark/80 mt-0.5">
+              Chandigarh • Delhi • Gurgaon • Himachal • Uttarakhand
+            </p>
           </div>
 
-          {/* Right Hero Column: Live Rate Snapshot Card */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="lg:col-span-5"
-          >
-            <div className="rounded-3xl bg-slate-900/90 border border-slate-800 p-6 sm:p-8 backdrop-blur-xl shadow-2xl shadow-black/80">
-              <div className="flex items-center justify-between mb-5 pb-4 border-b border-slate-800">
-                <div>
-                  <span className="text-[11px] font-black uppercase tracking-wider text-amber-400">
-                    Transparent Per-Km Rates
-                  </span>
-                  <h3 className="text-xl font-black text-white">North India Fleet Rates</h3>
-                </div>
-                <div className="px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-xs font-bold">
-                  24x7 Available
-                </div>
-              </div>
+          <input type="hidden" name="vehicle" value={selectedCar.name} />
 
-              {/* Quick Fleet Rate List */}
-              <div className="space-y-2.5 mb-5">
-                {vehicles.map((v) => (
-                  <div
-                    key={v.id}
-                    className="flex items-center justify-between p-3 rounded-2xl bg-slate-950/70 border border-slate-800/80 hover:border-amber-500/50 transition-colors"
-                  >
-                    <div>
-                      <span className="text-sm font-bold text-white block">{v.name}</span>
-                      <span className="text-[11px] text-slate-400">{v.category}</span>
-                    </div>
-                    <div className="text-right">
-                      <span className="text-base font-black text-amber-400 block">{v.rateDisplay}</span>
-                      <span className="text-[10px] text-slate-400">quoted rate</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
+          {/* Vehicle Selector Grid */}
+          <div className="mt-4 grid grid-cols-3 gap-2 sm:gap-2.5">
+            {heroFleet.map((vehicle, index) => {
+              const isActive = index === activeCar
 
-              <p className="text-[11px] text-slate-400 leading-relaxed mb-5">
-                * Final fare may depend on trip requirements. Contact TAXI 24X7 for a quote for your journey.
-              </p>
-
-              <div className="grid grid-cols-2 gap-3">
+              return (
                 <button
+                  key={vehicle.name}
                   type="button"
-                  onClick={() => onOpenEnquiry && onOpenEnquiry()}
-                  className="w-full py-3 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs text-center transition-all"
+                  onClick={() => setActiveCar(index)}
+                  aria-pressed={isActive}
+                  className={`group rounded-xl border-2 px-1.5 py-1.5 text-center transition-all focus:outline-none focus:ring-4 focus:ring-blue-primary/20 ${
+                    isActive
+                      ? 'border-blue-dark bg-white shadow-[0_8px_20px_rgba(10,31,68,0.2)] scale-[1.02]'
+                      : 'border-transparent bg-white/55 hover:bg-white/80'
+                  }`}
                 >
-                  Book Your Taxi
+                  <span className="block h-12 sm:h-14">
+                    <img
+                      src={vehicle.image}
+                      alt=""
+                      className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </span>
+                  <span className="mt-1 block text-[9px] font-black leading-tight text-blue-dark sm:text-[10px]">
+                    {vehicle.name}
+                  </span>
+                  <span className="mt-0.5 block text-[8px] font-extrabold uppercase leading-tight text-blue-primary sm:text-[9px]">
+                    {vehicle.rate}
+                  </span>
                 </button>
-                <a
-                  href={`https://wa.me/${contact.whatsappRaw}?text=${encodeURIComponent(
-                    'Hello TAXI 24X7, I want to check taxi availability and fare for my travel in North India.'
-                  )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs text-center transition-all flex items-center justify-center gap-1.5"
-                >
-                  WhatsApp Us
-                </a>
-              </div>
-            </div>
-          </motion.div>
-        </div>
+              )
+            })}
+          </div>
+
+          {/* Form Fields */}
+          <div className="mt-4 grid gap-2.5 sm:grid-cols-2">
+            <label className="sm:col-span-2">
+              <span className="sr-only">Trip type (required)</span>
+              <select
+                name="package"
+                defaultValue="Outstation Trip"
+                required
+                className="h-12 w-full rounded-xl border-0 bg-white px-4 text-xs sm:text-sm font-extrabold text-blue-dark outline-none focus:ring-4 focus:ring-blue-primary/20"
+              >
+                <option>Outstation Trip (Round / One-Way)</option>
+                <option>Delhi to Chandigarh / Reverse Taxi</option>
+                <option>Himachal Tour (Shimla, Manali, Dharamshala)</option>
+                <option>Uttarakhand Tour (Dehradun, Mussoorie, Rishikesh)</option>
+                <option>Char Dham Yatra (Kedarnath, Badrinath)</option>
+                <option>Kashmir &amp; Jammu Tour</option>
+                <option>Rajasthan &amp; Khatu Shyam Ji Tour</option>
+                <option>Agra Mathura Vrindavan Tour</option>
+                <option>5 Devi Yatra Darshan</option>
+                <option>Airport Pick / Drop</option>
+              </select>
+            </label>
+            <Field name="name" placeholder="Your Name *" />
+            <Field
+              name="mobile"
+              placeholder="Mobile Number *"
+              type="tel"
+              inputMode="numeric"
+              pattern="[0-9]{10}"
+              title="Enter a valid 10-digit mobile number"
+            />
+            <Field name="pickup" placeholder="Pickup City / Area *" />
+            <Field name="drop" placeholder="Drop City / Destination *" />
+            <Field name="date" type="date" className="sm:col-span-2" />
+          </div>
+
+          {/* CTAs */}
+          <div className="mt-4 grid grid-cols-2 gap-3">
+            <a
+              href={`tel:${contact.phone}`}
+              className="inline-flex min-h-12 items-center justify-center rounded-full border-2 border-blue-dark px-3 text-center text-xs font-black uppercase text-blue-dark transition hover:bg-blue-dark hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-primary/20 sm:text-sm"
+            >
+              📞 Call Now
+            </a>
+            <button
+              type="submit"
+              className="min-h-12 rounded-full bg-blue-dark px-3 text-xs font-black uppercase text-white shadow-[0_10px_24px_rgba(10,31,68,0.25)] transition hover:-translate-y-0.5 hover:bg-blue-primary focus:outline-none focus:ring-4 focus:ring-blue-primary/25 sm:text-sm"
+            >
+              Get Cab Online
+            </button>
+          </div>
+        </motion.form>
+      </div>
+
+      {/* Carousel dots */}
+      <div className="absolute bottom-4 right-4 z-20 flex gap-2 sm:bottom-6 sm:right-6">
+        {heroBackgrounds.map((background, index) => (
+          <button
+            key={background.src}
+            type="button"
+            onClick={() => setActiveBackground(index)}
+            aria-label={`Show hero image ${index + 1}`}
+            className={`h-2.5 rounded-full shadow transition-all focus:outline-none focus:ring-4 focus:ring-white/40 ${
+              index === activeBackground ? 'w-8 bg-yellow-primary' : 'w-2.5 bg-white/75 hover:bg-white'
+            }`}
+          />
+        ))}
       </div>
     </section>
+  )
+}
+
+function Field({ name, placeholder, type = 'text', className = '', ...inputProps }) {
+  return (
+    <label className={className}>
+      <span className={type === 'date' ? 'mb-1 block text-xs font-black text-blue-dark' : 'sr-only'}>
+        {type === 'date' ? 'Travel Date *' : placeholder}
+      </span>
+      <input
+        name={name}
+        type={type}
+        placeholder={placeholder}
+        required
+        {...inputProps}
+        className="h-12 w-full rounded-xl border-0 bg-white px-3 sm:px-4 text-xs sm:text-sm font-bold text-blue-dark outline-none placeholder:text-gray-500 focus:ring-4 focus:ring-blue-primary/20"
+      />
+    </label>
   )
 }

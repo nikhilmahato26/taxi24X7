@@ -1,88 +1,96 @@
 import { motion } from 'framer-motion'
-import { MapPin, Navigation, Compass, ArrowRightCircle, Repeat, Car, ArrowRight, MessageSquare } from 'lucide-react'
-import { taxiServices, contact } from '../../data/siteContent'
+import { services, contact } from '../../data/siteContent'
+import { useInView } from '../../hooks/useInView'
 
-const iconMap = {
-  'map-pin': MapPin,
-  navigation: Navigation,
-  compass: Compass,
-  'arrow-right-circle': ArrowRightCircle,
-  repeat: Repeat,
-  car: Car,
+const serviceIcons = {
+  outstation: '🛣️',
+  'hill-tours': '🏔️',
+  pilgrimage: '🛕',
+  'one-way': '➡️',
+  airport: '✈️',
+  'tempo-group': '🚌',
 }
 
-export default function Services({ onOpenEnquiry }) {
+export default function Services() {
+  const [ref, inView] = useInView(0.1)
+
   return (
-    <section id="services" className="py-20 lg:py-28 bg-slate-950 text-white relative">
+    <section id="services" className="py-20 bg-gray-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black tracking-wider uppercase bg-amber-500/15 text-amber-400 border border-amber-500/30 mb-4">
-            <Car className="w-3.5 h-3.5" />
-            <span>Dedicated North India Cab Options</span>
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-4">
-            OUR TAXI SERVICES
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <span className="section-label">
+            <svg className="w-4 h-4 text-yellow-primary" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd"/>
+            </svg>
+            Comprehensive Travel Solutions
+          </span>
+          <h2 className="section-title mb-4">
+            Our Taxi &amp; Tour <span className="text-blue-primary">Services</span>
           </h2>
-
-          <p className="text-slate-400 text-base sm:text-lg leading-relaxed">
-            Around-the-clock taxi and outstation transportation services connecting Delhi, Chandigarh, and key North Indian destinations.
+          <p className="section-sub mx-auto">
+            From daily airport runs and one-way intercity drops to multi-day Himalayan expeditions and Char Dham yatra pilgrimages.
           </p>
-        </div>
+        </motion.div>
 
-        {/* 6 Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {taxiServices.map((service, idx) => {
-            const Icon = iconMap[service.icon] || Car
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((service, i) => {
+            const icon = serviceIcons[service.id] || '🚗'
+            const whatsappMsg = `Hi TAXI 24X7, I want to book ${service.title}. Please confirm availability and fare estimate.`
+
             return (
               <motion.div
                 key={service.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.08 }}
-                className="group bg-slate-900 rounded-3xl p-8 border border-slate-800 hover:border-amber-400 shadow-xl transition-all duration-300 flex flex-col justify-between"
+                initial={{ opacity: 0, y: 30 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className="group bg-white rounded-3xl p-6 shadow-card card-hover border border-gray-100 flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-amber-500/15 text-amber-400 group-hover:bg-amber-400 group-hover:text-slate-950 flex items-center justify-center transition-all duration-300">
-                      <Icon className="w-7 h-7" />
-                    </div>
-                    <span className="text-[11px] font-bold tracking-wider uppercase px-3 py-1 rounded-full bg-slate-950 border border-slate-800 text-slate-300 group-hover:text-amber-400 transition-colors">
-                      {service.tag}
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-3xl">{icon}</span>
+                    <span className="text-xs font-bold px-3 py-1 rounded-full bg-blue-50 text-blue-primary">
+                      {service.badge}
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-black text-white group-hover:text-amber-400 transition-colors mb-3">
+                  <h3 className="text-xl font-black text-blue-dark mb-2 group-hover:text-blue-primary transition-colors">
                     {service.title}
                   </h3>
 
-                  <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                    {service.description}
+                  <p className="text-gray-500 text-sm leading-relaxed mb-4">
+                    {service.desc}
                   </p>
+
+                  <div className="space-y-1.5 mb-6">
+                    {service.routes.map((rt) => (
+                      <div key={rt} className="flex items-center gap-2 text-xs text-gray-600 font-medium">
+                        <span className="text-yellow-primary font-bold">➔</span>
+                        <span>{rt}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
-                <div className="pt-4 border-t border-slate-800 flex items-center justify-between">
-                  <button
-                    type="button"
-                    onClick={() => onOpenEnquiry && onOpenEnquiry('', service.title)}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-400 hover:text-amber-300 transition-colors"
-                  >
-                    <span>Enquire Service</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                  </button>
-
+                <div className="pt-4 border-t border-gray-100 grid grid-cols-2 gap-2">
                   <a
-                    href={`https://wa.me/${contact.whatsappRaw}?text=${encodeURIComponent(
-                      `Hello TAXI 24X7, I want to enquire about ${service.title}.`
-                    )}`}
+                    href={`https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(whatsappMsg)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-9 h-9 rounded-xl bg-slate-800 hover:bg-emerald-600 hover:text-white text-slate-300 flex items-center justify-center transition-colors"
-                    aria-label={`WhatsApp for ${service.title}`}
+                    className="text-center bg-yellow-primary hover:bg-yellow-400 text-blue-dark font-black text-xs py-2.5 px-3 rounded-xl transition-all shadow-sm"
                   >
-                    <MessageSquare className="w-4 h-4" />
+                    WhatsApp
+                  </a>
+                  <a
+                    href={`tel:${contact.phone}`}
+                    className="text-center bg-blue-primary hover:bg-blue-700 text-white font-bold text-xs py-2.5 px-3 rounded-xl transition-all shadow-sm"
+                  >
+                    Call Now
                   </a>
                 </div>
               </motion.div>

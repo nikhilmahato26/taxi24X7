@@ -1,620 +1,484 @@
 // ============================================================
-// TAXI 24X7 – siteContent.js
-// Single source of truth for 24x7 Taxi & Travel Services across North India
+// TAXI 24X7 – siteContent.js (single source of truth)
 // ============================================================
 
+import logoImg from '../assets/images/logo-taxi24x7.png'
+import fleetDzireImg from '../assets/images/fleet-swift-dzire.png'
+import fleetErtigaImg from '../assets/images/hero-car-mpv.png'
+import fleetCarensImg from '../assets/images/fleet-kia-carens.png'
 import fleetInnovaCrystaImg from '../assets/images/fleet-innova-crysta.png'
-import fleetDzireImg from '../assets/images/fleet-swift-dzire.jpg'
+import fleetInnovaHycrossImg from '../assets/images/fleet-innova-hycross.png'
+import fleetTempoImg from '../assets/images/hero-car-traveller.png'
 
-// ─── 1. Brand & Business Information ────────────────────────
+// ─── Brand ───────────────────────────────────────────────────
 export const brand = {
-  name: 'TAXI 24 X 7',
-  serviceType: '24x7 Taxi & Travel Services',
-  tagline: 'Your Journey, Our Drive',
-  eyebrow: 'TAXI 24X7 • NORTH INDIA TAXI SERVICES',
-  heroHeading: 'YOUR JOURNEY, OUR DRIVE',
-  heroSubheading:
-    'Reliable taxi services, outstation travel and North India tour packages connecting Delhi, Chandigarh, Himachal, Uttarakhand, Kashmir, Rajasthan and more.',
-  primaryCta: 'Book a Taxi',
-  secondaryCta: 'Call Now',
-  statusBadge: '24x7 Active Taxi Service Across North India',
+  name: 'TAXI 24X7',
+  legalName: 'TAXI 24X7',
+  tagline: 'YOUR RIDE. ANY TIME. EVERYWHERE.',
+  slogan: 'Your Ride. Any Time. Everywhere.',
+  logo: logoImg,
+  colors: {
+    primary: '#003B95',
+    yellow: '#FFD200',
+    dark: '#0A1F44',
+  },
 }
 
-// ─── 2. Contact & Business Details ──────────────────────────
+// ─── Contact & Business Details ─────────────────────────────
 export const contact = {
-  businessName: 'TAXI 24X7',
-  phone: '+91 9815657986',
-  phoneTel: 'tel:+919815657986',
-  phoneDisplay: '+91 98156 57986',
+  phone: '9815657986',
+  displayPhone: '+91 9815657986',
+  whatsapp: '919815657986',
   email: 'taxi24x707@gmail.com',
-  emailMailto: 'mailto:taxi24x707@gmail.com',
-  gstNumber: '03BZHPK5217Q1Z2',
-  primaryServiceArea: 'North India',
-  whatsappRaw: '919815657986',
-  whatsappUrl: 'https://wa.me/919815657986',
-  defaultWhatsAppMessage:
-    'Hello TAXI 24X7, I want to enquire about taxi booking / outstation travel in North India.',
+  gst: '03BZHPK5217Q1Z2',
+  region: 'North India',
+  instagram: 'https://www.instagram.com/taxi24x7india?utm_source=qr&stkn=dTRuaG1raHhkNXkz',
+  facebook: 'https://www.facebook.com/share/1H8JDdF5wS/',
+  locations: [
+    {
+      id: 'chandigarh',
+      title: 'Chandigarh Hub',
+      address: 'City Plaza, Peermuchalla, Chandigarh',
+      city: 'Chandigarh / Peermuchalla',
+      state: 'Punjab / Chandigarh',
+      badge: 'Head Office',
+    },
+    {
+      id: 'gurgaon',
+      title: 'Gurgaon Hub',
+      address: 'Rajendra Park, Sector 105, Gurgaon, Haryana',
+      city: 'Gurgaon',
+      state: 'Haryana',
+      badge: 'NCR Branch',
+    },
+  ],
+  serviceAreas: [
+    'Delhi',
+    'Chandigarh',
+    'Punjab',
+    'Mohali',
+    'Himachal Pradesh',
+    'Uttar Pradesh',
+    'Haryana',
+    'Jammu & Kashmir',
+    'Rajasthan',
+    'Uttarakhand',
+  ],
 }
 
-// ─── 3. Business Locations ──────────────────────────────────
-export const locations = [
+// ─── Hero ────────────────────────────────────────────────────
+export const hero = {
+  heading: '24×7 Taxi & Outstation Cab Service Across North India',
+  subheading: 'Safe, reliable, and premium cabs for one-way drops, round trips, hill station holidays, devotional tours, and intercity travel with transparent per-km rates.',
+  highlights: [
+    { icon: '🕐', text: 'Available 24×7' },
+    { icon: '🚗', text: 'Clean AC Fleet' },
+    { icon: '🏔️', text: 'Hill Station Specialists' },
+    { icon: '🛕', text: 'Char Dham & Pilgrimage' },
+    { icon: '🧾', text: 'GST Invoice Available' },
+    { icon: '⚡', text: 'Instant Booking' },
+  ],
+}
+
+// ─── How It Works ────────────────────────────────────────────
+export const howItWorks = [
   {
-    id: 'chandigarh-hub',
-    title: 'Chandigarh Hub',
-    address: 'City Plaza, Peermuchalla, Chandigarh',
-    label: 'Chandigarh / Tri-City Operations',
-    highlights: ['Peermuchalla Base', 'Tri-city & Mohali Connectivity', 'Gateway to Himachal & Punjab'],
+    step: '01',
+    icon: 'location',
+    title: 'Select Route & Car',
+    desc: 'Choose your pickup city, drop destination, and preferred vehicle from our fleet.',
   },
   {
-    id: 'gurgaon-hub',
-    title: 'Gurgaon / NCR Hub',
-    address: 'Rajendra Park, Sector 105, Gurgaon, Haryana',
-    label: 'Delhi NCR & Haryana Operations',
-    highlights: ['Sector 105 Gurgaon Base', 'Delhi NCR Airport Connectivity', 'Direct Highway & Expressway Access'],
+    step: '02',
+    icon: 'phone',
+    title: 'Instant Confirmation',
+    desc: 'Call or WhatsApp TAXI 24X7 at +91 9815657986 for transparent, upfront pricing.',
+  },
+  {
+    step: '03',
+    icon: 'car',
+    title: 'Enjoy Safe Travel',
+    desc: 'Doorstep pickup with experienced, verified drivers for a comfortable ride.',
   },
 ]
 
-// ─── 4. Vehicle Fleet (Strict Whitelist & Supplied Rates) ───
-export const vehicles = [
+// ─── Vehicle Fleet ───────────────────────────────────────────
+export const fleet = [
   {
-    id: 'dzire',
-    name: 'Maruti Suzuki Dzire',
-    category: 'Sedan',
-    ratePerKm: 12,
-    rateDisplay: '₹12/km',
-    image: fleetDzireImg,
-    description: 'Comfortable & economical sedan for city, airport & outstation travel.',
+    id: 'dzire-aura',
+    name: 'Maruti Suzuki Dzire / Aura',
     type: 'Sedan',
+    image: fleetDzireImg,
+    seats: 5,
+    ac: true,
+    pricePerKm: 12,
+    rateText: '₹12/km',
+    icon: '🚗',
+    suitableFor: ['Intercity Outstation', 'Airport Transfers', 'Budget Family Trips'],
+    specs: ['5 Seater', 'Spacious Boot Space', 'Chilled AC', 'Fuel Efficient'],
+    featured: false,
+    badge: 'Best Value',
   },
   {
     id: 'ertiga',
     name: 'Maruti Suzuki Ertiga',
-    category: 'MUV',
-    ratePerKm: 15,
-    rateDisplay: '₹15/km',
-    image: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=900&q=80',
-    description: 'Spacious MUV choice for family trips, hill stations & luggage comfort.',
-    type: 'MUV',
+    type: 'Family MPV',
+    image: fleetErtigaImg,
+    seats: 7,
+    ac: true,
+    pricePerKm: 15,
+    rateText: '₹15/km',
+    icon: '🚐',
+    suitableFor: ['Family Vacations', 'Hill Station Rides', 'Small Group Trips'],
+    specs: ['7 Seater', 'Foldable Seats', 'Dual AC', 'Comfortable Suspension'],
+    featured: false,
+    badge: 'Popular Family Car',
   },
   {
     id: 'kia-carens',
     name: 'Kia Carens',
-    category: 'MUV',
-    ratePerKm: 18,
-    rateDisplay: '₹18/km',
-    image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80',
-    description: 'Modern premium MUV with refined ride comfort and smooth cruising.',
-    type: 'MUV',
+    type: 'Premium MPV',
+    image: fleetCarensImg,
+    seats: 7,
+    ac: true,
+    pricePerKm: 18,
+    rateText: '₹18/km',
+    icon: '🚐',
+    suitableFor: ['Executive Travel', 'Long-Distance Cruising', 'Mountain Highways'],
+    specs: ['6/7 Seater', 'Plush Luxury Interior', 'Smooth Ride', 'Dual Row AC'],
+    featured: false,
+    badge: 'Executive Comfort',
   },
   {
     id: 'innova-crysta',
     name: 'Toyota Innova Crysta',
-    category: 'Premium',
-    ratePerKm: 20,
-    rateDisplay: '₹20/km',
-    image: fleetInnovaCrystaImg,
-    description: 'Gold standard premium outstation cruiser for mountain & highway journeys.',
     type: 'Premium SUV',
+    image: fleetInnovaCrystaImg,
+    seats: 7,
+    ac: true,
+    pricePerKm: 20,
+    rateText: '₹20/km',
+    icon: '🚙',
+    suitableFor: ['Char Dham Yatra', 'Himachal & Kashmir Tours', 'VIP & Corporate Rides'],
+    specs: ['7 Seater', 'Captain Seats', 'Heavy Luggage Carrier', 'All-Terrain Stability'],
+    featured: true,
+    badge: 'Most Popular',
   },
   {
     id: 'innova-hycross',
     name: 'Toyota Innova Hycross',
-    category: 'Premium',
-    ratePerKm: 25,
-    rateDisplay: '₹25/km',
-    image: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=900&q=80',
-    description: 'Next-generation luxury travel experience with supreme ride quietness.',
-    type: 'Premium Luxury',
+    type: 'Luxury Hybrid MPV',
+    image: fleetInnovaHycrossImg,
+    seats: 7,
+    ac: true,
+    pricePerKm: 25,
+    rateText: '₹25/km',
+    icon: '✨',
+    suitableFor: ['Ultra Luxury Travel', 'Business Delegates', 'Long-Distance VIP Tours'],
+    specs: ['7 Seater', 'Ultra-Quiet Hybrid Cabin', 'Ottoman Recliners', 'Premium Climate Control'],
+    featured: false,
+    badge: 'Luxury Class',
   },
   {
     id: 'tempo-traveller',
     name: 'Tempo Traveller',
-    category: 'Group Travel',
-    ratePerKm: 35,
-    rateDisplay: '₹35/km',
-    image: 'https://images.unsplash.com/photo-1464219789935-c2d9d9aba644?auto=format&fit=crop&w=900&q=80',
-    description: 'Ideal for group tours, corporate journeys, family Yatras & Char Dham pilgrimage.',
-    type: 'Group Travel',
+    type: 'Group Vehicle (12-17 Seater)',
+    image: fleetTempoImg,
+    seats: 12,
+    ac: true,
+    pricePerKm: 35,
+    rateText: '₹35/km',
+    icon: '🚌',
+    suitableFor: ['Large Family Yatras', 'Corporate Outings', 'Char Dham & Kashmir Groups'],
+    specs: ['12 to 17 Seater', 'Pushback Reclining Seats', 'High Roof', 'Dedicated Luggage Box'],
+    featured: false,
+    badge: 'Group Specialist',
   },
 ]
 
-export const rateNotes = {
-  primaryNotice:
-    'Rates shown are the client-provided per-kilometre rates. Contact TAXI 24X7 for the applicable fare for your journey and trip requirements.',
-  disclaimer: 'Final fare may depend on trip requirements. Contact us for a quote.',
-}
-
-// ─── 5. Hero Quick Highlights ───────────────────────────────
-export const heroHighlights = [
-  {
-    id: '24x7-service',
-    title: '24x7 Service',
-    description: 'Taxi assistance available around the clock.',
-    badge: 'Round the Clock',
-    icon: 'clock',
-  },
-  {
-    id: 'north-india',
-    title: 'North India',
-    description: 'Travel across major North Indian regions.',
-    badge: 'Interstate Coverage',
-    icon: 'map-pin',
-  },
-  {
-    id: 'multiple-vehicles',
-    title: 'Multiple Vehicles',
-    description: 'Cars and Tempo Traveller options available.',
-    badge: 'Fleet Options',
-    icon: 'car',
-  },
-  {
-    id: 'tour-packages',
-    title: 'Tour Packages',
-    description: 'Explore Himachal, Uttarakhand, Kashmir, Rajasthan and more.',
-    badge: 'Holiday & Yatra',
-    icon: 'compass',
-  },
-]
-
-// ─── 6. About Section ───────────────────────────────────────
-export const aboutContent = {
-  heading: 'YOUR NORTH INDIA TRAVEL PARTNER',
-  paragraph:
-    'TAXI 24X7 provides taxi and travel services across North India, connecting customers to major cities, hill stations, pilgrimage destinations and tourist destinations. With a range of cars and Tempo Traveller options, customers can enquire for local, intercity and outstation travel requirements.',
-  locationsIntro:
-    'With operating locations in Chandigarh (Peermuchalla) and Gurgaon (Sector 105), TAXI 24X7 connects travelers across North India seamlessly.',
-}
-
-// ─── 7. Taxi Services ───────────────────────────────────────
-export const taxiServices = [
-  {
-    id: 'delhi-taxi',
-    title: 'Delhi Taxi Service',
-    description: 'Taxi services from Delhi to major North Indian destinations.',
-    tag: 'Delhi NCR Hub',
-    icon: 'map-pin',
-  },
-  {
-    id: 'chandigarh-taxi',
-    title: 'Chandigarh Taxi Service',
-    description: 'Taxi services from Chandigarh to nearby cities, hill stations and destinations.',
-    tag: 'Tri-City Hub',
-    icon: 'navigation',
-  },
-  {
-    id: 'outstation-taxi',
-    title: 'Outstation Taxi',
-    description: 'Travel between cities across North India.',
-    tag: 'Intercity Connect',
-    icon: 'compass',
-  },
-  {
-    id: 'one-way-taxi',
-    title: 'One-Way Taxi',
-    description: 'Enquire for one-way travel requirements.',
-    tag: 'Single Drop',
-    icon: 'arrow-right-circle',
-  },
-  {
-    id: 'round-trip-taxi',
-    title: 'Round Trip Taxi',
-    description: 'Enquire for round-trip travel.',
-    tag: 'Return Trips',
-    icon: 'repeat',
-  },
-  {
-    id: 'tour-transportation',
-    title: 'Tour Transportation',
-    description: 'Transportation for holiday and pilgrimage tours.',
-    tag: 'Holiday & Yatra',
-    icon: 'car',
-  },
-]
-
-// ─── 8. Service Area ────────────────────────────────────────
-export const serviceArea = {
-  heading: 'NORTH INDIA TAXI SERVICE',
-  supportingText:
-    'Taxi and travel services connecting Delhi, Chandigarh, Punjab, Haryana, Himachal Pradesh, Uttarakhand, Uttar Pradesh, Jammu & Kashmir and Rajasthan.',
-  states: [
-    { name: 'Delhi', note: 'National Capital Region & Airport connectivity' },
-    { name: 'Chandigarh', note: 'Tri-city, Peermuchalla & Panchkula hub' },
-    { name: 'Punjab', note: 'Amritsar, Jalandhar, Ludhiana & statewide' },
-    { name: 'Mohali', note: 'IT corridor and adjoining Punjab routes' },
-    { name: 'Himachal Pradesh', note: 'Shimla, Manali, Dharamshala, Kasol, Kufri' },
-    { name: 'Uttar Pradesh', note: 'Agra, Mathura, Vrindavan, Ayodhya, Lucknow' },
-    { name: 'Haryana', note: 'Gurgaon, Faridabad, Panipat, Ambala' },
-    { name: 'Jammu & Kashmir', note: 'Jammu, Katra (Maa Vaishno Devi), Kashmir' },
-    { name: 'Rajasthan', note: 'Jaipur, Khatu Shyam, Ajmer, Udaipur' },
-    { name: 'Uttarakhand', note: 'Dehradun, Haridwar, Rishikesh, Char Dham' },
-  ],
-}
-
-// ─── 9. Delhi to Popular Destinations (21 Exact Routes) ─────
-export const delhiRoutes = [
-  {
-    id: 'delhi-chandigarh',
-    from: 'Delhi',
-    to: 'Chandigarh',
-    displayName: 'Delhi to Chandigarh Taxi',
-    description: 'Direct taxi service between Delhi NCR and Chandigarh Tri-city.',
-    tag: 'High-Demand Route',
-  },
-  {
-    id: 'delhi-shimla',
-    from: 'Delhi',
-    to: 'Shimla',
-    displayName: 'Delhi to Shimla Taxi',
-    description: 'Scenic hill station taxi from Delhi to the queen of hills, Shimla.',
-    tag: 'Hill Station',
-  },
-  {
-    id: 'delhi-manali',
-    from: 'Delhi',
-    to: 'Manali',
-    displayName: 'Delhi to Manali Taxi',
-    description: 'Long-distance mountain highway taxi from Delhi to Manali and Solang Valley.',
-    tag: 'Himachal Special',
-  },
-  {
-    id: 'delhi-dehradun',
-    from: 'Delhi',
-    to: 'Dehradun',
-    displayName: 'Delhi to Dehradun Taxi',
-    description: 'Express travel connecting Delhi NCR to the Uttarakhand capital, Dehradun.',
-    tag: 'Uttarakhand Connect',
-  },
-  {
-    id: 'delhi-rishikesh',
-    from: 'Delhi',
-    to: 'Rishikesh',
-    displayName: 'Delhi to Rishikesh Taxi',
-    description: 'Spiritual and adventure getaway taxi from Delhi to Rishikesh.',
-    tag: 'Ganga Valley',
-  },
-  {
-    id: 'delhi-haridwar',
-    from: 'Delhi',
-    to: 'Haridwar',
-    displayName: 'Delhi to Haridwar Taxi',
-    description: 'Holy pilgrimage taxi from Delhi to Har Ki Pauri, Haridwar.',
-    tag: 'Pilgrimage Route',
-  },
-  {
-    id: 'delhi-jaipur',
-    from: 'Delhi',
-    to: 'Jaipur',
-    displayName: 'Delhi to Jaipur Taxi',
-    description: 'Smooth highway drive connecting Delhi to the Pink City of Jaipur.',
-    tag: 'Rajasthan Expressway',
-  },
-  {
-    id: 'delhi-agra-mathura-vrindavan',
-    from: 'Delhi',
-    to: 'Agra / Mathura / Vrindavan',
-    displayName: 'Delhi to Agra, Mathura & Vrindavan Taxi',
-    description: 'Yamuna Expressway taxi covering Taj Mahal, Mathura and Vrindavan temples.',
-    tag: 'Heritage & Pilgrimage',
-  },
-  {
-    id: 'delhi-haldwani',
-    from: 'Delhi',
-    to: 'Haldwani',
-    displayName: 'Delhi to Haldwani Taxi',
-    description: 'Reliable taxi service connecting Delhi to Haldwani & Kumaon gateway.',
-    tag: 'Kumaon Gateway',
-  },
-  {
-    id: 'delhi-mussoorie',
-    from: 'Delhi',
-    to: 'Mussoorie',
-    displayName: 'Delhi to Mussoorie Taxi',
-    description: 'Scenic uphill mountain ride from Delhi to the picturesque town of Mussoorie.',
-    tag: 'Hill Station',
-  },
-  {
-    id: 'delhi-nainital',
-    from: 'Delhi',
-    to: 'Nainital',
-    displayName: 'Delhi to Nainital Taxi',
-    description: 'Comfortable family holiday taxi service from Delhi to the lake city Nainital.',
-    tag: 'Lakes & Hills',
-  },
-  {
-    id: 'delhi-khatu-shyam',
-    from: 'Delhi',
-    to: 'Khatu Shyam',
-    displayName: 'Delhi to Khatu Shyam Taxi',
-    description: 'Devotional pilgrimage taxi service from Delhi to Khatu Shyam Ji Temple.',
-    tag: 'Pilgrimage Special',
-  },
-  {
-    id: 'delhi-jammu',
-    from: 'Delhi',
-    to: 'Jammu',
-    displayName: 'Delhi to Jammu Taxi',
-    description: 'Interstate outstation taxi connecting Delhi NCR with Jammu and Katra.',
-    tag: 'J&K Outstation',
-  },
-  {
-    id: 'delhi-badrinath',
-    from: 'Delhi',
-    to: 'Badrinath',
-    displayName: 'Delhi to Badrinath Taxi',
-    description: 'Char Dham holy yatra transportation from Delhi to sacred Badrinath Dham.',
-    tag: 'Char Dham Yatra',
-  },
-  {
-    id: 'delhi-kedarnath',
-    from: 'Delhi',
-    to: 'Kedarnath',
-    displayName: 'Delhi to Kedarnath Taxi',
-    description: 'Spiritual yatra taxi from Delhi to Sonprayag/Gaurikund for Kedarnath Dham.',
-    tag: 'Char Dham Yatra',
-  },
-  {
-    id: 'delhi-kashmir',
-    from: 'Delhi',
-    to: 'Kashmir',
-    displayName: 'Delhi to Kashmir Taxi',
-    description: 'North India tour taxi service connecting Delhi to Srinagar & Kashmir valley.',
-    tag: 'Kashmir Outstation',
-  },
-  {
-    id: 'delhi-amritsar',
-    from: 'Delhi',
-    to: 'Amritsar',
-    displayName: 'Delhi to Amritsar Taxi',
-    description: 'Direct highway taxi journey from Delhi to the Golden Temple city of Amritsar.',
-    tag: 'Punjab Express',
-  },
-  {
-    id: 'delhi-lucknow',
-    from: 'Delhi',
-    to: 'Lucknow',
-    displayName: 'Delhi to Lucknow Taxi',
-    description: 'Fast expressway travel from Delhi to Lucknow via Yamuna & Agra expressways.',
-    tag: 'Expressway Route',
-  },
-  {
-    id: 'delhi-bihar',
-    from: 'Delhi',
-    to: 'Bihar',
-    displayName: 'Delhi to Bihar Taxi',
-    description: 'Long-distance intercity taxi service from Delhi to major districts in Bihar.',
-    tag: 'Interstate Outstation',
-  },
-  {
-    id: 'delhi-punjab',
-    from: 'Delhi',
-    to: 'Punjab',
-    displayName: 'Delhi to Punjab Taxi',
-    description: 'Comprehensive taxi transportation from Delhi to cities across Punjab.',
-    tag: 'Punjab Outstation',
-  },
-  {
-    id: 'delhi-ayodhya',
-    from: 'Delhi',
-    to: 'Ayodhya',
-    displayName: 'Delhi to Ayodhya Taxi',
-    description: 'Direct pilgrimage taxi service connecting Delhi NCR with Ayodhya Dham.',
-    tag: 'Pilgrimage Special',
-  },
-]
-
-// ─── 10. Chandigarh to Popular Destinations (16 Exact Routes) ──
-export const chandigarhRoutes = [
-  {
-    id: 'chandigarh-delhi',
-    from: 'Chandigarh',
-    to: 'Delhi',
-    displayName: 'Chandigarh to Delhi Taxi',
-    description: 'High-frequency cab service connecting Chandigarh & Peermuchalla to Delhi NCR & Airport.',
-    tag: 'Airport & Highway',
-  },
-  {
-    id: 'chandigarh-dehradun',
-    from: 'Chandigarh',
-    to: 'Dehradun',
-    displayName: 'Chandigarh to Dehradun Taxi',
-    description: 'Comfortable cross-state taxi between Chandigarh Tri-city and Dehradun, Uttarakhand.',
-    tag: 'Intercity Connect',
-  },
-  {
-    id: 'chandigarh-shimla',
-    from: 'Chandigarh',
-    to: 'Shimla',
-    displayName: 'Chandigarh to Shimla Taxi',
-    description: 'Swift Himalayan highway taxi climb from Chandigarh to Shimla & Kufri.',
-    tag: 'Hill Station',
-  },
-  {
-    id: 'chandigarh-manali',
-    from: 'Chandigarh',
-    to: 'Manali',
-    displayName: 'Chandigarh to Manali Taxi',
-    description: 'Scenic travel from Chandigarh along the Beas river up to Kullu and Manali.',
-    tag: 'Himachal Special',
-  },
-  {
-    id: 'chandigarh-jammu',
-    from: 'Chandigarh',
-    to: 'Jammu',
-    displayName: 'Chandigarh to Jammu Taxi',
-    description: 'Direct taxi service from Chandigarh to Jammu and Katra for Mata Vaishno Devi pilgrims.',
-    tag: 'Yatra Outstation',
-  },
-  {
-    id: 'chandigarh-haridwar',
-    from: 'Chandigarh',
-    to: 'Haridwar',
-    displayName: 'Chandigarh to Haridwar Taxi',
-    description: 'Smooth pilgrimage drive connecting Chandigarh directly to Haridwar & Rishikesh.',
-    tag: 'Spiritual Yatra',
-  },
-  {
-    id: 'chandigarh-jaipur',
-    from: 'Chandigarh',
-    to: 'Jaipur',
-    displayName: 'Chandigarh to Jaipur Taxi',
-    description: 'Interstate highway taxi service connecting Chandigarh to Jaipur, Rajasthan.',
-    tag: 'Rajasthan Connect',
-  },
-  {
-    id: 'chandigarh-kasol',
-    from: 'Chandigarh',
-    to: 'Kasol',
-    displayName: 'Chandigarh to Kasol Taxi',
-    description: 'Mountain valley cab service connecting Chandigarh to Kasol and Parvati Valley.',
-    tag: 'Parvati Valley',
-  },
-  {
-    id: 'chandigarh-dharamshala',
-    from: 'Chandigarh',
-    to: 'Dharamshala',
-    displayName: 'Chandigarh to Dharamshala Taxi',
-    description: 'Scenic taxi ride from Chandigarh to Kangra Valley, Dharamshala & McLeod Ganj.',
-    tag: 'Kangra Valley',
-  },
-  {
-    id: 'chandigarh-agra',
-    from: 'Chandigarh',
-    to: 'Agra',
-    displayName: 'Chandigarh to Agra Taxi',
-    description: 'Long-distance heritage taxi travel from Chandigarh to the city of Taj Mahal, Agra.',
-    tag: 'Heritage Route',
-  },
-  {
-    id: 'chandigarh-amritsar',
-    from: 'Chandigarh',
-    to: 'Amritsar',
-    displayName: 'Chandigarh to Amritsar Taxi',
-    description: 'Smooth drive through Punjab connecting Chandigarh to the Golden Temple, Amritsar.',
-    tag: 'Punjab Express',
-  },
-  {
-    id: 'chandigarh-himachal',
-    from: 'Chandigarh',
-    to: 'Himachal',
-    displayName: 'Chandigarh to Himachal Taxi',
-    description: 'Flexible touring taxi service covering multiple districts across Himachal Pradesh.',
-    tag: 'All Himachal Tour',
-  },
-  {
-    id: 'chandigarh-5-devi-yatra',
-    from: 'Chandigarh',
-    to: '5 Devi Yatra',
-    displayName: 'Chandigarh to 5 Devi Yatra Taxi',
-    description: 'Dedicated holy pilgrimage taxi package covering the sacred 5 Devi temples in Himachal/Punjab.',
-    tag: 'Pilgrimage Special',
-  },
-  {
-    id: 'chandigarh-mussoorie',
-    from: 'Chandigarh',
-    to: 'Mussoorie',
-    displayName: 'Chandigarh to Mussoorie Taxi',
-    description: 'Direct hill station cab service from Chandigarh Tri-city to Mussoorie.',
-    tag: 'Hill Station',
-  },
-  {
-    id: 'chandigarh-noida',
-    from: 'Chandigarh',
-    to: 'Noida',
-    displayName: 'Chandigarh to Noida Taxi',
-    description: 'Direct intercity taxi linking Chandigarh, Peermuchalla & Mohali to Noida.',
-    tag: 'NCR Express',
-  },
-  {
-    id: 'chandigarh-kufri',
-    from: 'Chandigarh',
-    to: 'Kufri',
-    displayName: 'Chandigarh to Kufri Taxi',
-    description: 'Snow point and mountain adventure taxi journey from Chandigarh up to Kufri.',
-    tag: 'Himachal Hills',
-  },
-]
-
-export const allRoutes = [...delhiRoutes, ...chandigarhRoutes]
-
-// ─── 11. North India Tour Packages (6 Exact Packages) ───────
+// ─── Tour Packages ───────────────────────────────────────────
 export const tourPackages = [
   {
     id: 'himachal-tour',
     title: 'Himachal Tour Package',
+    subtitle: 'Shimla • Manali • Dharamshala • Dalhousie • Kasol • Kufri',
     region: 'Himachal Pradesh',
-    subtitle: 'Shimla • Manali • Mountains • Snow • Scenic Roads',
-    description:
-      'Explore scenic hill stations, snow-capped peaks, and beautiful Himalayan valleys with comfortable TAXI 24X7 cabs and tempo travellers.',
     image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1000&q=80',
-    ctaText: 'Enquire About Himachal',
-    tag: 'Hill Tour Highlight',
+    description: 'Explore breathtaking snow-capped peaks, pine forests, Rohtang Pass, Solang Valley, and scenic mountain highways with expert hill drivers.',
+    features: ['Shimla & Kufri Sightseeing', 'Manali & Solang Valley', 'Dharamshala & McLeodganj', 'Experienced Mountain Chauffeurs'],
+    badge: 'Bestseller Hill Tour',
   },
   {
     id: 'uttarakhand-tour',
     title: 'Uttarakhand Tour Package',
+    subtitle: 'Dehradun • Mussoorie • Rishikesh • Haridwar • Nainital',
     region: 'Uttarakhand',
-    subtitle: 'Dehradun • Mussoorie • Rishikesh • Nainital',
-    description:
-      'Experience tranquil hill retreats, sacred riverbanks, and scenic Himalayan roadways across Uttarakhand with reliable 24x7 cab service.',
     image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1000&q=80',
-    ctaText: 'Plan Your Uttarakhand Journey',
-    tag: 'Devbhoomi Tour',
+    description: 'Experience holy Ganga Aarti at Haridwar & Rishikesh, scenic Queen of Hills Mussoorie, and picturesque lakes of Nainital.',
+    features: ['Ganga Aarti at Haridwar & Rishikesh', 'Mussoorie Kempty Falls', 'Nainital Lake Tour', 'Custom 3 to 7 Days Itinerary'],
+    badge: 'Devbhoomi Special',
   },
   {
     id: 'char-dham-tour',
     title: 'Char Dham Tour Package',
-    region: 'Uttarakhand Himalayas',
     subtitle: 'Yamunotri • Gangotri • Kedarnath • Badrinath',
-    description:
-      'Spiritual pilgrimage transportation across sacred Himalayan temples with robust outstation vehicles, cars and Tempo Traveller options.',
+    region: 'Uttarakhand Himalayas',
     image: 'https://images.unsplash.com/photo-1605649487212-47bdab064df8?auto=format&fit=crop&w=1000&q=80',
-    ctaText: 'Plan Your Uttarakhand Journey',
-    tag: 'Sacred Yatra',
+    description: 'Sacred Himalayan pilgrimage with rugged Innova Crysta and Tempo Travellers. Dedicated mountain route guidance and 24x7 support.',
+    features: ['Sonprayag / Gaurikund Route', 'Badrinath Dham Transportation', 'Do Dham & Char Dham Options', 'All-Inclusive Custom Quotes'],
+    badge: 'Sacred Pilgrimage',
   },
   {
     id: 'kashmir-tour',
     title: 'Kashmir Tour Package',
+    subtitle: 'Srinagar • Gulmarg • Pahalgam • Sonamarg • Jammu',
     region: 'Jammu & Kashmir',
-    subtitle: 'Srinagar • Gulmarg • Pahalgam • Sonamarg',
-    description:
-      'Plan a comfortable journey to Kashmir with TAXI 24X7. Enquire about available tour and transportation options connecting Delhi, Chandigarh and Kashmir.',
     image: 'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1000&q=80',
-    ctaText: 'Enquire for Kashmir',
-    tag: 'Discover Kashmir',
+    description: 'Paradise on Earth tour connecting Delhi / Chandigarh to Jammu, Srinagar Dal Lake, snow meadows of Gulmarg, and Betaab Valley.',
+    features: ['Dal Lake & Shikara Connect', 'Gulmarg Gondola Transfer', 'Pahalgam Valley & Betaab Valley', 'Mata Vaishno Devi Katra add-on'],
+    badge: 'Paradise Tour',
   },
   {
     id: 'rajasthan-tour',
     title: 'Rajasthan Tour Package',
+    subtitle: 'Jaipur • Udaipur • Jodhpur • Jaisalmer • Khatu Shyam',
     region: 'Rajasthan',
-    subtitle: 'Jaipur • Jodhpur • Udaipur • Desert Roads',
-    description:
-      'Travel through the land of royal forts, palaces, and heritage architecture across Rajasthan with dependable intercity cabs and tempo travellers.',
     image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1000&q=80',
-    ctaText: 'Enquire for Rajasthan',
-    tag: 'Royal Heritage',
+    description: 'Tour majestic royal forts, palaces, and sacred temples across Rajasthan with comfortable highway cruisers via modern expressways.',
+    features: ['Pink City Jaipur Forts', 'Khatu Shyam Ji & Salasar Balaji', 'Lake City Udaipur & Jodhpur', 'Smooth Delhi-Mumbai Expressway'],
+    badge: 'Royal Heritage',
   },
   {
     id: 'agra-mathura-vrindavan-tour',
     title: 'Agra Mathura Vrindavan Tour Package',
+    subtitle: 'Taj Mahal • Agra Fort • Krishna Janmabhoomi • Banke Bihari',
     region: 'Uttar Pradesh',
-    subtitle: 'Taj Mahal • Mathura • Vrindavan Temples',
-    description:
-      'Dedicated pilgrimage and cultural tour package linking Delhi or Chandigarh to Agra, Mathura and Vrindavan temples via modern expressways.',
     image: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1000&q=80',
-    ctaText: 'Enquire Now',
-    tag: 'Heritage & Darshan',
+    description: 'One-day and multi-day spiritual and heritage tour connecting Delhi / Chandigarh to Mathura, Vrindavan temples and the iconic Taj Mahal.',
+    features: ['Taj Mahal & Agra Fort', 'Shri Krishna Janmabhoomi Darshan', 'Banke Bihari & Prem Mandir', 'Yamuna Expressway Fast Transit'],
+    badge: 'Spiritual & Heritage',
   },
 ]
 
-// ─── 12. Navigation Links ───────────────────────────────────
-export const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'Vehicles & Rates', href: '#vehicles' },
-  { label: 'Route Search', href: '#route-search' },
-  { label: 'Delhi Routes', href: '#delhi-routes' },
-  { label: 'Chandigarh Routes', href: '#chandigarh-routes' },
-  { label: 'Tour Packages', href: '#tour-packages' },
-  { label: 'Service Area', href: '#service-area' },
-  { label: 'Locations', href: '#locations' },
-  { label: 'Contact', href: '#contact' },
+// ─── Popular Routes (Delhi & Chandigarh) ─────────────────────
+export const delhiRoutes = [
+  { id: 'delhi-chandigarh', from: 'Delhi', to: 'Chandigarh', title: 'Delhi to Chandigarh Taxi', desc: 'Direct expressway taxi connecting Delhi NCR with Chandigarh, Mohali & Panchkula.', tag: 'Expressway', popular: true },
+  { id: 'delhi-shimla', from: 'Delhi', to: 'Shimla', title: 'Delhi to Shimla Taxi', desc: 'Scenic mountain climb to the Queen of Hills with experienced hill chauffeurs.', tag: 'Hill Station', popular: true },
+  { id: 'delhi-manali', from: 'Delhi', to: 'Manali', title: 'Delhi to Manali Taxi', desc: 'Comfortable long-distance ride through Kullu Valley to Manali & Solang.', tag: 'Himachal Tour', popular: true },
+  { id: 'delhi-dehradun', from: 'Delhi', to: 'Dehradun', title: 'Delhi to Dehradun Taxi', desc: 'Fast highway & valley cab service to Uttarakhand capital Dehradun.', tag: 'Uttarakhand', popular: true },
+  { id: 'delhi-rishikesh', from: 'Delhi', to: 'Rishikesh', title: 'Delhi to Rishikesh Taxi', desc: 'Direct taxi to the yoga capital and holy banks of River Ganga.', tag: 'Pilgrimage', popular: true },
+  { id: 'delhi-haridwar', from: 'Delhi', to: 'Haridwar', title: 'Delhi to Haridwar Taxi', desc: 'Ganga Aarti darshan journey with round-the-clock availability.', tag: 'Spiritual Yatra', popular: true },
+  { id: 'delhi-jaipur', from: 'Delhi', to: 'Jaipur', title: 'Delhi to Jaipur Taxi', desc: 'Smooth highway drive to the Pink City via Delhi-Jaipur Expressway.', tag: 'Rajasthan', popular: true },
+  { id: 'delhi-agra-mathura', from: 'Delhi', to: 'Agra Mathura Vrindavan', title: 'Delhi to Agra Mathura Vrindavan Taxi', desc: 'Expressway pilgrimage & heritage tour to Taj Mahal and Vrindavan.', tag: 'Heritage Yatra', popular: true },
+  { id: 'delhi-haldwani', from: 'Delhi', to: 'Haldwani', title: 'Delhi to Haldwani Taxi', desc: 'Reliable taxi service connecting Delhi to the gateway of Kumaon.', tag: 'Kumaon Hills' },
+  { id: 'delhi-mussoorie', from: 'Delhi', to: 'Mussoorie', title: 'Delhi to Mussoorie Taxi', desc: 'Uphill mountain route directly to the picturesque Mall Road Mussoorie.', tag: 'Hill Station' },
+  { id: 'delhi-nainital', from: 'Delhi', to: 'Nainital', title: 'Delhi to Nainital Taxi', desc: 'Family holiday cab service to the famous lake district of Nainital.', tag: 'Lakes & Hills' },
+  { id: 'delhi-khatu-shyam', from: 'Delhi', to: 'Khatu Shyam', title: 'Delhi to Khatu Shyam Taxi', desc: 'Devotional pilgrimage taxi service to Khatu Shyam Ji Temple in Rajasthan.', tag: 'Pilgrimage Special' },
+  { id: 'delhi-jammu', from: 'Delhi', to: 'Jammu', title: 'Delhi to Jammu Taxi', desc: 'Long-distance intercity taxi connecting Delhi with Jammu & Katra.', tag: 'J&K Outstation' },
+  { id: 'delhi-badrinath', from: 'Delhi', to: 'Badrinath', title: 'Delhi to Badrinath Taxi', desc: 'Sacred Himalayan Dham transportation along the Alaknanda river.', tag: 'Char Dham' },
+  { id: 'delhi-kedarnath', from: 'Delhi', to: 'Kedarnath', title: 'Delhi to Kedarnath Taxi', desc: 'Dedicated spiritual yatra taxi from Delhi to Sonprayag / Gaurikund base.', tag: 'Char Dham' },
+  { id: 'delhi-kashmir', from: 'Delhi', to: 'Kashmir', title: 'Delhi to Kashmir Taxi', desc: 'Touring taxi connecting Delhi to Srinagar, Gulmarg, and Pahalgam.', tag: 'Paradise Valley' },
+  { id: 'delhi-amritsar', from: 'Delhi', to: 'Amritsar', title: 'Delhi to Amritsar Taxi', desc: 'Grand Trunk road taxi journey to Sri Harmandir Sahib (Golden Temple).', tag: 'Punjab Express' },
+  { id: 'delhi-lucknow', from: 'Delhi', to: 'Lucknow', title: 'Delhi to Lucknow Taxi', desc: 'Fast expressway travel to Lucknow via Yamuna and Agra-Lucknow Expressways.', tag: 'Expressway' },
+  { id: 'delhi-bihar', from: 'Delhi', to: 'Bihar', title: 'Delhi to Bihar Taxi', desc: 'Long-distance interstate taxi service from Delhi to destinations in Bihar.', tag: 'Interstate' },
+  { id: 'delhi-punjab', from: 'Delhi', to: 'Punjab', title: 'Delhi to Punjab Taxi', desc: 'Comprehensive taxi transportation across all districts of Punjab.', tag: 'Punjab Outstation' },
+  { id: 'delhi-ayodhya', from: 'Delhi', to: 'Ayodhya', title: 'Delhi to Ayodhya Taxi', desc: 'Direct pilgrimage cab service connecting Delhi NCR with Ram Mandir Dham.', tag: 'Pilgrimage Special' },
 ]
+
+export const chandigarhRoutes = [
+  { id: 'chd-delhi', from: 'Chandigarh', to: 'Delhi', title: 'Chandigarh to Delhi Taxi', desc: 'High-frequency door-to-door cab service to Delhi NCR & IGI Airport.', tag: 'Airport & Highway', popular: true },
+  { id: 'chd-dehradun', from: 'Chandigarh', to: 'Dehradun', title: 'Chandigarh to Dehradun Taxi', desc: 'Cross-state intercity ride linking Chandigarh Tri-city to Dehradun.', tag: 'Intercity', popular: true },
+  { id: 'chd-shimla', from: 'Chandigarh', to: 'Shimla', title: 'Chandigarh to Shimla Taxi', desc: 'Swift Himalayan highway climb from Chandigarh to Shimla & Kufri.', tag: 'Hill Station', popular: true },
+  { id: 'chd-manali', from: 'Chandigarh', to: 'Manali', title: 'Chandigarh to Manali Taxi', desc: 'Scenic travel along Beas river to Kullu, Manali and Solang Valley.', tag: 'Himachal Special', popular: true },
+  { id: 'chd-jammu', from: 'Chandigarh', to: 'Jammu', title: 'Chandigarh to Jammu Taxi', desc: 'Direct taxi service from Chandigarh to Jammu and Katra (Vaishno Devi).', tag: 'Yatra Outstation' },
+  { id: 'chd-haridwar', from: 'Chandigarh', to: 'Haridwar', title: 'Chandigarh to Haridwar Taxi', desc: 'Smooth pilgrimage drive connecting Chandigarh directly to Haridwar.', tag: 'Spiritual Yatra' },
+  { id: 'chd-jaipur', from: 'Chandigarh', to: 'Jaipur', title: 'Chandigarh to Jaipur Taxi', desc: 'Interstate highway taxi connecting Chandigarh to the Pink City Jaipur.', tag: 'Rajasthan Connect' },
+  { id: 'chd-kasol', from: 'Chandigarh', to: 'Kasol', title: 'Chandigarh to Kasol Taxi', desc: 'Mountain valley cab service to Kasol, Manikaran Sahib & Parvati Valley.', tag: 'Parvati Valley' },
+  { id: 'chd-dharamshala', from: 'Chandigarh', to: 'Dharamshala', title: 'Chandigarh to Dharamshala Taxi', desc: 'Scenic taxi ride from Chandigarh to Kangra Valley & McLeodganj.', tag: 'Kangra Valley' },
+  { id: 'chd-agra', from: 'Chandigarh', to: 'Agra', title: 'Chandigarh to Agra Taxi', desc: 'Long-distance heritage taxi travel from Chandigarh to Taj Mahal Agra.', tag: 'Heritage Route' },
+  { id: 'chd-amritsar', from: 'Chandigarh', to: 'Amritsar', title: 'Chandigarh to Amritsar Taxi', desc: 'Smooth highway drive connecting Chandigarh to Amritsar Golden Temple.', tag: 'Punjab Express' },
+  { id: 'chd-himachal', from: 'Chandigarh', to: 'Himachal', title: 'Chandigarh to Himachal Taxi', desc: 'All-Himachal tour taxi covering hill towns, scenic passes & valleys.', tag: 'All Himachal Tour' },
+  { id: 'chd-5-devi', from: 'Chandigarh', to: '5 Devi Yatra', title: 'Chandigarh to 5 Devi Yatra Taxi', desc: 'Dedicated holy yatra: Mansa Devi, Chintpurni, Jwala Ji, Kangra Devi & Chamunda Devi.', tag: 'Pilgrimage Special', popular: true },
+  { id: 'chd-mussoorie', from: 'Chandigarh', to: 'Mussoorie', title: 'Chandigarh to Mussoorie Taxi', desc: 'Direct hill station cab service to Mussoorie and Dhanaulti.', tag: 'Hill Station' },
+  { id: 'chd-noida', from: 'Chandigarh', to: 'Noida', title: 'Chandigarh to Noida Taxi', desc: 'Direct intercity taxi linking Chandigarh & Peermuchalla to Noida NCR.', tag: 'NCR Express' },
+  { id: 'chd-kufri', from: 'Chandigarh', to: 'Kufri', title: 'Chandigarh to Kufri Taxi', desc: 'Snow viewpoint and mountain adventure journey up to Kufri & Fagu.', tag: 'Himachal Hills' },
+]
+
+// ─── Services ────────────────────────────────────────────────
+export const services = [
+  {
+    id: 'outstation',
+    category: 'Intercity',
+    title: 'Outstation Taxi Service',
+    desc: 'Round-trip and one-way outstation cabs across North India with transparent per-km billing and experienced drivers.',
+    badge: 'Popular',
+    btnText: 'Book Outstation Cab',
+    btnColor: 'primary',
+    routes: ['Delhi → All North India', 'Chandigarh → All Destinations'],
+  },
+  {
+    id: 'hill-tours',
+    category: 'Holidays',
+    title: 'Hill Station & Tour Cabs',
+    desc: 'Specialized mountain driving cabs for Shimla, Manali, Dharamshala, Mussoorie, Nainital, and Kashmir valleys.',
+    badge: 'Specialist',
+    btnText: 'Book Hill Tour',
+    btnColor: 'yellow',
+    routes: ['Delhi / Chandigarh → Himachal', 'Delhi / Chandigarh → Uttarakhand'],
+  },
+  {
+    id: 'pilgrimage',
+    category: 'Spiritual',
+    title: 'Pilgrimage & Yatra Cabs',
+    desc: 'Dedicated devotional travel for Char Dham, 5 Devi Yatra, Khatu Shyam Ji, Haridwar, Rishikesh, and Ayodhya Ram Mandir.',
+    badge: 'Special',
+    btnText: 'Book Yatra Cab',
+    btnColor: 'primary',
+    routes: ['Char Dham Yatra', '5 Devi Darshan Yatra', 'Khatu Shyam & Ayodhya'],
+  },
+  {
+    id: 'one-way',
+    category: 'Flexible',
+    title: 'One-Way Drop Service',
+    desc: 'Pay only for one-way drop between Delhi, Chandigarh, Jaipur, Agra, Dehradun, and major North Indian cities.',
+    badge: 'Affordable',
+    btnText: 'Book One-Way Drop',
+    btnColor: 'yellow',
+    routes: ['Chandigarh ↔ Delhi', 'Delhi ↔ Jaipur / Agra / Dehradun'],
+  },
+  {
+    id: 'airport',
+    category: 'Transfers',
+    title: 'Airport & Railway Transfers',
+    desc: 'Punctual, guaranteed airport pickups and drops to Delhi IGI Airport (T1, T2, T3) and Chandigarh International Airport.',
+    badge: '24×7',
+    btnText: 'Book Airport Cab',
+    btnColor: 'primary',
+    routes: ['Chandigarh ↔ Delhi IGI Airport', 'Doorstep Airport Drop'],
+  },
+  {
+    id: 'tempo-group',
+    category: 'Group Travel',
+    title: 'Tempo Traveller Rental',
+    desc: '12 to 17 seater luxury pushback Tempo Travellers for large families, corporate tours, and extended yatra groups.',
+    badge: '12-17 Seats',
+    btnText: 'Book Tempo Traveller',
+    btnColor: 'yellow',
+    routes: ['All North India Group Tours', 'Char Dham & Himachal Trips'],
+  },
+]
+
+// ─── Why Choose TAXI 24X7 ────────────────────────────────────
+export const whyChoose = [
+  { icon: '🕐', title: '24×7 Instant Availability', desc: 'Round-the-clock dispatch for urgent rides, midnight airport runs, and scheduled tours.' },
+  { icon: '💰', title: 'Transparent Per-KM Rates', desc: 'Clear starting fares from ₹12/km with no hidden driver surcharges or surprise billing.' },
+  { icon: '🏔️', title: 'Expert Mountain Drivers', desc: 'Skilled chauffeurs with years of experience on Himalayan highways and mountain passes.' },
+  { icon: '🛡️', title: 'Clean & Sanitized Fleet', desc: 'Immaculately maintained AC sedans, SUVs, and luxury Tempo Travellers for your safety.' },
+  { icon: '🧾', title: 'GST Registered Company', desc: 'Official GST billing (03BZHPK5217Q1Z2) available for corporate and business travel.' },
+  { icon: '📍', title: 'Dual Hub Operations', desc: 'Strategically located in Chandigarh (Peermuchalla) and Gurgaon (Sector 105) covering all North India.' },
+]
+
+// ─── Testimonials ────────────────────────────────────────────
+export const testimonials = [
+  {
+    name: 'Gurpreet Singh',
+    location: 'Chandigarh',
+    rating: 5,
+    review: 'Booked Innova Crysta from Chandigarh to Manali for a 5-day family trip. Driver was polite and an expert on the hilly roads. Clean car and prompt service!',
+    type: 'Himachal Tour',
+  },
+  {
+    name: 'Rohit Sharma',
+    location: 'Gurgaon, Sector 105',
+    rating: 5,
+    review: 'Used TAXI 24X7 for a one-way trip from Gurgaon to Chandigarh. Booking was confirmed in 2 minutes on WhatsApp. Driver arrived on time and the ride was super smooth.',
+    type: 'Delhi to Chandigarh',
+  },
+  {
+    name: 'Sunita Sharma',
+    location: 'Delhi NCR',
+    rating: 5,
+    review: 'We booked Tempo Traveller for our 5 Devi Yatra starting from Chandigarh. All 14 family members were very comfortable. Professional driver who knew every temple route.',
+    type: '5 Devi Yatra',
+  },
+  {
+    name: 'Vikas Mehra',
+    location: 'Mohali',
+    rating: 5,
+    review: 'Best cab service in Tri-City and North India! Rates are very reasonable at ₹12/km for Dzire and ₹20/km for Crysta. Genuine billing and GST invoice provided.',
+    type: 'Outstation Travel',
+  },
+  {
+    name: 'Anjali Verma',
+    location: 'Noida',
+    rating: 5,
+    review: 'Hired TAXI 24X7 for Char Dham Yatra. Excellent Innova Crysta in top mechanical condition. The driver took utmost care on high altitude mountain roads.',
+    type: 'Char Dham Yatra',
+  },
+  {
+    name: 'Amit Patel',
+    location: 'Jaipur',
+    rating: 5,
+    review: 'Booked Delhi to Jaipur and return with TAXI 24X7. Very comfortable sedan, clean interiors, and reasonable rates. Will definitely recommend to friends and colleagues!',
+    type: 'Delhi to Jaipur',
+  },
+]
+
+// ─── FAQs ────────────────────────────────────────────────────
+export const faqs = [
+  {
+    q: 'How do I book a cab with TAXI 24X7?',
+    a: 'You can book a cab instantly by calling +91 9815657986 or sending a WhatsApp message. Simply share your pickup location, drop destination, date, and preferred vehicle, and we will confirm your booking with an upfront quote.',
+  },
+  {
+    q: 'What are the per-kilometre rates for different vehicles?',
+    a: 'Our starting per-km rates are: Maruti Suzuki Dzire / Aura at ₹12/km, Maruti Suzuki Ertiga at ₹15/km, Kia Carens at ₹18/km, Toyota Innova Crysta at ₹20/km, Toyota Innova Hycross at ₹25/km, and Tempo Traveller at ₹35/km. Minimum daily running limits apply for outstation travel.',
+  },
+  {
+    q: 'Are tolls, state taxes, and parking included in the per-km rate?',
+    a: 'Per-km rates cover vehicle hire and fuel. State border entry taxes, highway toll taxes, parking fees, and driver night allowances (if applicable) are paid as actuals or included in an all-inclusive fixed package quote upon request.',
+  },
+  {
+    q: 'Which areas and states does TAXI 24X7 serve?',
+    a: 'TAXI 24X7 operates across all of North India, including Delhi NCR, Chandigarh, Punjab, Mohali, Himachal Pradesh, Uttar Pradesh, Haryana, Jammu & Kashmir, Rajasthan, and Uttarakhand.',
+  },
+  {
+    q: 'Do you provide one-way drop taxi service?',
+    a: 'Yes! We provide convenient one-way drop taxi services on major corridors like Chandigarh to Delhi, Delhi to Chandigarh, Delhi to Jaipur, Delhi to Dehradun, and more without round-trip compulsion.',
+  },
+  {
+    q: 'Can I book custom tour packages for Himachal, Uttarakhand, or Char Dham?',
+    a: 'Absolutely! We offer customized multi-day tour packages with vehicles of your choice (Sedan, Ertiga, Innova Crysta, Hycross, or Tempo Traveller) with experienced mountain chauffeurs.',
+  },
+  {
+    q: 'Is TAXI 24X7 available 24 hours a day?',
+    a: 'Yes, our taxi service and helpline are active 24 hours a day, 7 days a week, 365 days a year for emergency pickups, early-morning flights, and midnight travel.',
+  },
+  {
+    q: 'Do you provide GST invoices for corporate and business travel?',
+    a: 'Yes, TAXI 24X7 is a GST-registered business with GSTIN 03BZHPK5217Q1Z2. We provide valid GST tax invoices for business trips and corporate reimbursement.',
+  },
+]
+
+// ─── Footer Links ────────────────────────────────────────────
+export const footerLinks = {
+  quickLinks: [
+    { label: 'Home', href: '#home' },
+    { label: 'Fleet & Rates', href: '#fleet' },
+    { label: 'Tour Packages', href: '#tours' },
+    { label: 'Popular Routes', href: '#routes' },
+    { label: 'Services', href: '#services' },
+    { label: 'Locations', href: '#locations' },
+    { label: 'Contact', href: '#contact' },
+  ],
+  services: [
+    { label: 'Delhi to Chandigarh Taxi', href: '#routes' },
+    { label: 'Chandigarh to Delhi Taxi', href: '#routes' },
+    { label: 'Himachal Tour Packages', href: '#tours' },
+    { label: 'Uttarakhand Tour Packages', href: '#tours' },
+    { label: 'Char Dham Yatra Taxi', href: '#tours' },
+    { label: 'Innova Crysta / Hycross Rental', href: '#fleet' },
+    { label: 'Tempo Traveller Group Travel', href: '#fleet' },
+    { label: 'Airport & Intercity Transfers', href: '#services' },
+  ],
+}
